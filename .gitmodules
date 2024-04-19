@@ -1,0 +1,9 @@
+[submodule "ext/core"]
+	path = ext/core
+	url = git@github.com:wonky-honky/core.git
+[submodule "ext/gd_cubism"]
+	path = ext/gd_cubism
+	url = git@github.com:pillowtrucker/gd_cubism.git
+[submodule "ext/tooting"]
+	path = ext/tooting
+	url = https://github.com/wonky-honky/tooting.git

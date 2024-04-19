@@ -1,0 +1,152 @@
+[gd_scene load_steps=3 format=3 uid="uid://3ghnh3j7dab5"]
+
+[ext_resource type="PackedScene" uid="uid://dx7ksnt6jsvbp" path="res://3d/scene/LinacLab.glb" id="1_luyjo"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7tl7u"]
+viewport_path = NodePath("Sprite3D/GDCubismUserModel")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(6.30933, 0, -24.1907, 0, 25, 0, 24.1907, 0, 6.30933, 240, 0, -274)
+texture = SubResource("ViewportTexture_7tl7u")
+
+[node name="GDCubismUserModel" type="GDCubismUserModel" parent="Sprite3D"]
+assets = "res://live2d/male/discord_mod/1399100.model3.json"
+anim_loop = true
+anim_loop_fade_in = true
+anim_expression = ""
+anim_motion = "_9"
+PARAM_ANGLE_X = -7.71144
+PARAM_ANGLE_Y = 16.3666
+PARAM_ANGLE_Z = -14.7841
+PARAM_EYE_R_OPEN = 1.0
+PARAM_EYE_R_SMILE = 0.0
+PARAM_EYE_L_OPEN = 1.0
+PARAM_EYE_L_SMILE = 0.0
+PARAM_EYE_FORM = 0.0
+PARAM_EYE_BALL_X = 0.0661049
+PARAM_EYE_BALL_Y = -0.557389
+PARAM_EYE_SCALE = 0.0
+PARAM_TEAR_LEAP_01 = 0.0
+PARAM_BROW_R_FORM = -0.4
+PARAM_BROW_R_X = 0.7
+PARAM_BROW_R_Y = -0.299
+PARAM_BROW_R_ANGLE = 0.3
+PARAM_BROW_L_FORM = 0.0
+PARAM_BROW_L_Y = -0.299
+PARAM_BROW_L_X = 0.7
+PARAM_BROW_L_ANGLE = 0.3
+PARAM_MOUTH_OPEN_Y = 0.0
+PARAM_MOUTH_FORM_01 = -1.78328
+PARAM_MOUTH_POS_Y = -0.356626
+PARAM_MOUTH_SCALE = 0.891719
+PARAM_MOUTH_SCALE_Y = 0.0
+PARAM_SHOULDER_R_ROTATE = -11.8229
+PARAM_ARM_R_ROTATE = 46.8138
+PARAM_HAND_R_ROTATE = -5.08605
+PARAM_ARM_R_ORDER = 0.0
+PARAM_SHOULDER_L_ROTATE = -29.0
+PARAM_ARM_L_ROTATE = 20.42
+PARAM_HAND_L_ROTATE = -23.0
+PARAM_ARM_L_ORDER = 0.0
+PARAM_BODY_ANGLE_X = -7.01785
+PARAM_BODY_ANGLE_Y = 6.71791
+PARAM_BODY_ANGLE_Z = -1.79841
+PARAM_BREATH = 0.0
+PARAM_STRETCH = -0.371361
+PARAM_SHOLDER_POSITION = 5.90069
+PARAM_POSITION_X = 0.0
+PARAM_POSITION_Y = 0.0
+PARAM_ROTATION_Z = 0.260099
+PARAM_BAST_SHAKE = 0.0
+PARAM_HAIR_FRONT = -0.0162522
+PARAM_HAIR_SIDE = -0.0394868
+PARAM_HAIR_BACK_01 = 0.0589612
+PARAM_HAIR_BACK_02 = 0.0600645
+PARAM_FLUFFY = 0.188846
+PARAM_FACE_SHADOW = 0.0
+PARAM_FACE_CHANGE = 0.0
+PARAM_CHEEK_01 = 1.0
+PARAM_CHEEK_02 = 0.0
+PARAM_CHEEK_03 = 0.0
+PARAM_CHEEK_04 = 0.0
+PARAM_CHEEK_05 = 0.0
+PARAM_TEAR_01 = 0.0
+PARAM_TEAR_02 = 0.0
+PARAM_TEAR_02_MOVE = 0.0
+PARAM_TEAR_03 = 0.0
+PARAM_TEAR_03_MOVE = 0.0
+PARAM_SWEAT = 0.0
+PARAM_SWEAT_MOVE = 0.0
+PARAM_EYE_WHITE_00 = 1.0
+PARAM_EYE_WHITE_01 = 0.0
+PARAM_EYE_01 = 1.0
+PARAM_EYE_02 = 0.0
+PARAM_EYE_05 = 0.0
+PARAM_MOUTH_01 = 1.0
+PARAM_MOUTH_02 = 0.0
+PARAM_MOUTH_03 = 0.0
+PARAM_MOUTH_05 = 0.0
+PARAM_BROW_01 = 1.0
+PARAM_HAND_R_01 = 1.0
+PARAM_HAND_R_02 = 1.0
+PARAM_HAND_R_03 = 0.0
+PARAM_HAND_R_04 = 0.0
+PARAM_HAND_R_05 = 0.0
+PARAM_HAND_R_06 = 0.0
+PARAM_HAND_R_07 = 0.0
+PARAM_HAND_R_08 = 0.0
+PARAM_HAND_R_09 = 0.0
+PARAM_HAND_R_10 = 0.0
+PARAM_HAND_R_11 = 0.0
+PARAM_HAND_L_01 = 1.0
+PARAM_HAND_L_02 = 1.0
+PARAM_HAND_L_03 = 0.0
+PARAM_HAND_L_04 = 0.0
+PARAM_HAND_L_05 = 0.0
+PARAM_HAND_L_06 = 0.0
+PARAM_HAND_L_07 = 0.0
+PARAM_HAND_L_08 = 0.0
+PARAM_HAND_L_09 = 0.0
+PARAM_HAND_L_10 = 0.0
+PARAM_HAND_L_11 = 0.0
+PARAM_UPPER_BODY_FLUFFY = -0.455146
+PARAM_LOWER_BODY_FLUFFY = 0.238229
+PartCore = 1.0
+PartFrontHair = 1.0
+PartEyebrow = 1.0
+PartMouth = 1.0
+PartEyeL = 1.0
+PartEyeR = 1.0
+PartCheek = 1.0
+PartHead = 1.0
+PartBackHair = 1.0
+PartExpression = 1.0
+PartNeck = 1.0
+PartUpperBody = 1.0
+PartArmR = 1.0
+PartArmL = 1.0
+PartLowerBody = 1.0
+PartFoot = 1.0
+PartHandR = 1.0
+PartHandL = 1.0
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(2048, 2048)
+render_target_update_mode = 4
+
+[node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Sprite3D/GDCubismUserModel"]
+
+[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Sprite3D/GDCubismUserModel"]
+
+[node name="LinacLab" parent="." instance=ExtResource("1_luyjo")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 212.556, -211.174, -540.063)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.43337, 0.112351, -0.894186, -0.250954, -0.967999, 5.63063e-08, -0.865571, 0.2244, 0.447697, -406.783, 120.905, -355.319)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.704206, 0.391853, -0.592068, -0.0808568, 0.872741, 0.481441, 0.705376, -0.291161, 0.646274, -57.4223, 163.052, -274.459)
+fov = 90.0
