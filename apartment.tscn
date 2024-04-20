@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://btin64ilyqmd0"]
+
+[ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Bedroom" parent="." instance=ExtResource("1_axgbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573897, 0, -0.955435)
+metadata/credit1 = "Everything Library - CONSUMABLES 0.2 // 12/09/2020BLENDER //Delete \"Plane\" - which is just for preview...All objects are contained in Scene Collection / CONSUMABLES / SubcategoryThis file will be updated when Blender fixes its heirarchy system!New version will be available @ http://davidoreilly.com/libraryLICENSE - http://davidoreilly.com/library    Creative: Creative Commons Attribution 4.0 International LicenseSoftware applications: MIT License Copyright line: Everything Library © David OReillyPermission is hereby granted, free of charge, to any person obtaining a copyof this software and associated documentation files (the \"Software\"), to dealin the Software without restriction, including without limitation the rightsto use, copy, modify, merge, publish, distribute, sublicense, and/or sellcopies of the Software, and to permit persons to whom the Software isfurnished to do so, subject to the following conditions:The above copyright notice and this permission notice shall be included inall copies or substantial portions of the Software.THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS ORIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THEAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHERLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS INTHE SOFTWARE."
+metadata/credit2 = "Kenney.nl"
+
+[node name="Light" parent="Bedroom" index="0"]
+visible = false
+
+[editable path="Bedroom"]
