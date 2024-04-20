@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm76t0nkdsfto"]
+[gd_scene load_steps=3 format=3 uid="uid://dm76t0nkdsfto"]
 
 [ext_resource type="PackedScene" uid="uid://bibomyt4hbiu4" path="res://3d/scene/Upright_Piano.glb" id="1_dw107"]
+[ext_resource type="Script" path="res://test_piano.gd" id="1_sskcu"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_sskcu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.848861, 0.528616, 0, -0.528616, 0.848861, 0, 37.1804, 17.6064)
