@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Upright_Piano.glb-0bca87297fdc0592802d5fc3335
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="PianoParasite"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
