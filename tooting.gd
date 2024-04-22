@@ -5,11 +5,12 @@ var elapsed = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
 	#super.toot();
 #	super.load_song()
-	super.play_note_anglo("C4");
-	super.play_note_anglo("E4");
-	super.play_note_anglo("G4");
+#	super.play_note_anglo("C4");
+#	super.play_note_anglo("E4");
+#	super.play_note_anglo("G4");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
