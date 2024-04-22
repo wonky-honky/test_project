@@ -9,10 +9,11 @@ script = ExtResource("1_sskcu")
 
 [node name="Upright_Piano" parent="." instance=ExtResource("1_dw107")]
 script = ExtResource("3_uphg2")
-metadata/credit = "\"Upright Piano\" (https://skfb.ly/6R7oG) by AleixoAlonso is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
 
 [node name="Camera3D" type="Camera3D" parent="Upright_Piano"]
-transform = Transform3D(1, 0, 0, 0, 0.71781, 0.696239, 0, -0.696239, 0.71781, 0, 1.3094, 1.07472)
-fov = 18.5
+transform = Transform3D(1, 0, 0, 0, 0.71781, 0.696239, 0, -0.696239, 0.71781, 0, 1.3094, 0.871054)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Upright_Piano"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43887, 0.701775)
 
 [editable path="Upright_Piano"]
