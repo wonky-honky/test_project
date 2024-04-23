@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk0kx25h76hp8"]
+
+[ext_resource type="PackedScene" uid="uid://50f2ry3hslf3" path="res://3d/scene/hospital_save_room/scene.gltf" id="1_g2vpy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_g2vpy")]

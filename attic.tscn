@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://sfqrxekjdwsp"]
+
+[ext_resource type="PackedScene" uid="uid://b4ecrrty12dmd" path="res://3d/scene/zatec_synagogue_tower_top_room/scene.gltf" id="1_6iahh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_6iahh")]
+
+[node name="Sketchfab_model" parent="Sketchfab_Scene" index="0"]
+transform = Transform3D(-0.137873, 0, 0, 0, 3.0614e-17, -0.137873, 0, -0.137873, -3.0614e-17, 0, 0, 0)
+
+[editable path="Sketchfab_Scene"]

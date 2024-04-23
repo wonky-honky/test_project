@@ -1,0 +1,11 @@
+Model Information:
+* title:	Concrete hatch with iron inputs
+* source:	https://sketchfab.com/3d-models/concrete-hatch-with-iron-inputs-c89f1e5311914840a5e777d548301e29
+* author:	3dhdscan (https://sketchfab.com/3dhdscan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Concrete hatch with iron inputs" (https://sketchfab.com/3d-models/concrete-hatch-with-iron-inputs-c89f1e5311914840a5e777d548301e29) by 3dhdscan (https://sketchfab.com/3dhdscan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

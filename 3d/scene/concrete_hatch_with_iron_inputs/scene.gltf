@@ -1,0 +1,289 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 48793,
+      "max": [
+        2.4280502796173096,
+        1.6344983577728271,
+        -2.8732283115386963
+      ],
+      "min": [
+        -3.5149292945861816,
+        -1.7510257959365845,
+        -3.515403985977173
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 585516,
+      "componentType": 5126,
+      "count": 48793,
+      "max": [
+        0.9999980926513672,
+        0.9999996423721313,
+        0.9999999403953552
+      ],
+      "min": [
+        -0.9999994039535522,
+        -0.9999988675117493,
+        -0.9993806481361389
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 48793,
+      "max": [
+        0.9994548559188843,
+        0.9999992847442627,
+        0.9999985694885254,
+        1.0
+      ],
+      "min": [
+        -0.9999947547912598,
+        -0.9996810555458069,
+        -0.9999761581420898,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 48793,
+      "max": [
+        0.9985128045082092,
+        0.9982016682624817
+      ],
+      "min": [
+        0.0012615644372999668,
+        0.0014074166538193822
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 276045,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "3dhdscan (https://sketchfab.com/3dhdscan)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/concrete-hatch-with-iron-inputs-c89f1e5311914840a5e777d548301e29",
+      "title": "Concrete hatch with iron inputs"
+    },
+    "generator": "Sketchfab-12.67.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1104180,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 390344,
+      "byteOffset": 1104180,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1171032,
+      "byteOffset": 1494524,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 780688,
+      "byteOffset": 2665556,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 3446244,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/dvojpoklop_DiffuseMap_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/dvojpoklop_DiffuseMap_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/dvojpoklop_DiffuseMap_normal.jpeg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "dvojpoklop_DiffuseMap",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.9129192073170731
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "dvojpoklop_dvojpoklop_DiffuseMap_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.004385535605251789,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        9.737845208527916e-19,
+        -0.004385535605251789,
+        0.0,
+        0.0,
+        0.004385535605251789,
+        9.737845208527916e-19,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "dvojpoklop.FBX"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        4.371138861980484e-06,
+        -5.551115123125783e-15,
+        99.99999999999991,
+        0.0,
+        99.99999999999991,
+        1.1102230246251565e-14,
+        -4.371138867531599e-06,
+        0.0,
+        -1.6653345369377348e-14,
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "dvojpoklop"
+    },
+    {
+      "mesh": 0,
+      "name": "dvojpoklop_dvojpoklop_DiffuseMap_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 33071,
+      "wrapT": 33071
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

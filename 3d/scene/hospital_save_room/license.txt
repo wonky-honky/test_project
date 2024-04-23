@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hospital Save Room
+* source:	https://sketchfab.com/3d-models/hospital-save-room-28de366ffb324d61a69a67b7f50e139a
+* author:	Veterock (https://sketchfab.com/windofglass)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hospital Save Room" (https://sketchfab.com/3d-models/hospital-save-room-28de366ffb324d61a69a67b7f50e139a) by Veterock (https://sketchfab.com/windofglass) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
