@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bus stop
+* source:	https://sketchfab.com/3d-models/bus-stop-619d27fc93f24be1a7d6994906ca4620
+* author:	Elbolillo (https://sketchfab.com/Elbolilloduro)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bus stop" (https://sketchfab.com/3d-models/bus-stop-619d27fc93f24be1a7d6994906ca4620) by Elbolillo (https://sketchfab.com/Elbolilloduro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

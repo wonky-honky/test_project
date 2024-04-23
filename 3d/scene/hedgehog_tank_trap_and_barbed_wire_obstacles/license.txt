@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hedgehog Tank Trap and Barbed Wire Obstacles
+* source:	https://sketchfab.com/3d-models/hedgehog-tank-trap-and-barbed-wire-obstacles-ab5417c63f29402b865016afd2ed2891
+* author:	flw_ftw (https://sketchfab.com/william.sayin)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hedgehog Tank Trap and Barbed Wire Obstacles" (https://sketchfab.com/3d-models/hedgehog-tank-trap-and-barbed-wire-obstacles-ab5417c63f29402b865016afd2ed2891) by flw_ftw (https://sketchfab.com/william.sayin) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
