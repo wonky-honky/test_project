@@ -50,10 +50,12 @@ _subresources={
 "generate/physics": true
 },
 "PATH:door_typeA": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 1
 },
 "PATH:door_typeA_001": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 1
 }
 }
 }

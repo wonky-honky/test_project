@@ -1,5 +1,6 @@
-[gd_scene load_steps=80 format=3 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=83 format=3 uid="uid://btin64ilyqmd0"]
 
+[ext_resource type="Script" path="res://apartment.gd" id="1_3f5pa"]
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
 [ext_resource type="PackedScene" uid="uid://p4abvw3pyb31" path="res://3d/scene/bathroom_in_rent_flat-_free_3d_scene/scene.gltf" id="2_hvrmp"]
 [ext_resource type="Texture2D" uid="uid://b7p8mk0bsbu5n" path="res://3d/scene/Bedroom_fabric-texture-background.jpg" id="3_crwam"]
@@ -8,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c1en1rwg1tmrl" path="res://3d/scene/Bedroom_Cheap wood Texture.jpg" id="6_mh2ic"]
 [ext_resource type="Texture2D" uid="uid://ce6k248ciw4by" path="res://3d/scene/Bedroom_doors.png" id="7_eg7by"]
 [ext_resource type="Texture2D" uid="uid://dw34f75ccph7w" path="res://3d/scene/Bedroom_metal.png" id="8_134t6"]
+[ext_resource type="Script" path="res://AptDoorOutside.gd" id="9_aw2h3"]
 [ext_resource type="PackedScene" uid="uid://dbpunb5iep8dj" path="res://3d/scene/concrete_hatch_with_iron_inputs/scene.gltf" id="9_b3ype"]
+[ext_resource type="Script" path="res://ParkingMeter.gd" id="9_yjjgo"]
 [ext_resource type="PackedScene" uid="uid://bcmij5bpje6w7" path="res://3d/scene/glimmingehus_borg_och_vallgrav/scene.gltf" id="10_fkrys"]
 [ext_resource type="PackedScene" uid="uid://baxpcqii0eoyo" path="res://3d/scene/bus_stop/scene.gltf" id="11_b6yfi"]
 [ext_resource type="PackedScene" uid="uid://d041c7d4l13al" path="res://3d/scene/garbage_patch/scene.gltf" id="12_w2cwk"]
@@ -799,6 +802,7 @@ mode = 0
 textures = [[], []]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_3f5pa")
 
 [node name="Bedroom" parent="." instance=ExtResource("1_axgbk")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0573897, 16.1681, 12.5239)
@@ -1028,6 +1032,9 @@ mesh = SubResource("ArrayMesh_8cv1y")
 [node name="door_typeA" parent="TheBedroom" index="8"]
 mesh = SubResource("ArrayMesh_p34wq")
 
+[node name="CollisionShape3D" parent="TheBedroom/door_typeA/StaticBody3D" index="0"]
+disabled = true
+
 [node name="alt1_005" parent="TheBedroom/Trash_001/CandyWrapper" index="0"]
 mesh = SubResource("ArrayMesh_8njq8")
 
@@ -1058,8 +1065,14 @@ mesh = SubResource("ArrayMesh_7u7y0")
 [node name="ParkingMeter" parent="TheBedroom/Outdoor" index="0"]
 mesh = SubResource("ArrayMesh_5rok4")
 
+[node name="StaticBody3D" parent="TheBedroom/Outdoor/ParkingMeter" index="0"]
+script = ExtResource("9_yjjgo")
+
 [node name="door_typeA_001" parent="TheBedroom" index="12"]
 mesh = SubResource("ArrayMesh_deeee")
+
+[node name="CollisionShape3D" parent="TheBedroom/door_typeA_001/StaticBody3D" index="0"]
+script = ExtResource("9_aw2h3")
 
 [node name="WakeupCamera" type="Camera3D" parent="TheBedroom"]
 transform = Transform3D(-0.0989324, 0, 0.0145738, 0, 0.1, 0, -0.0145738, 0, -0.0989324, 0.199222, 0.493008, -0.973447)
@@ -1352,6 +1365,7 @@ transform = Transform3D(0.946589, 0.150162, -0.285343, 0.102295, 0.699374, 0.707
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.475, 23.874, 66.634)
+input_ray_pickable = false
 script = ExtResource("17_mttxb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -1360,6 +1374,22 @@ shape = SubResource("CapsuleShape3D_7vppq")
 [node name="Camera3D" type="Camera3D" parent="Player/CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.53587, 0)
 current = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Player/CollisionShape3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Player/CollisionShape3D/CenterContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 visible = false
