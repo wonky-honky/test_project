@@ -7,3 +7,6 @@
 [submodule "ext/tooting"]
 	path = ext/tooting
 	url = https://github.com/wonky-honky/tooting.git
+[submodule "ext/godot_heightmap_plugin"]
+	path = ext/godot_heightmap_plugin
+	url = https://github.com/Zylann/godot_heightmap_plugin

@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=80 format=3 uid="uid://btin64ilyqmd0"]
 
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
 [ext_resource type="PackedScene" uid="uid://p4abvw3pyb31" path="res://3d/scene/bathroom_in_rent_flat-_free_3d_scene/scene.gltf" id="2_hvrmp"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://tfoxgv2vlgx1" path="res://3d/scene/bus_ussr_-_low/scene.gltf" id="14_qnbtx"]
 [ext_resource type="PackedScene" uid="uid://bqxbg0j5x81i3" path="res://3d/scene/vending_machine/scene.gltf" id="15_b4d3e"]
 [ext_resource type="PackedScene" uid="uid://wao2ntttau" path="res://3d/scene/vending_machine_-_blue_cow/scene.gltf" id="16_ow8qe"]
+[ext_resource type="Script" path="res://Player.gd" id="17_mttxb"]
+[ext_resource type="ArrayOccluder3D" uid="uid://ckswy2f1ihxby" path="res://apartment.occ" id="18_jojvq"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="19_ajbcq"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="20_4wpt5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj46"]
 resource_name = "Material.002"
@@ -749,11 +753,17 @@ shadow_mesh = SubResource("ArrayMesh_77w7a")
 
 [sub_resource type="Sky" id="Sky_ygbd3"]
 sky_material = SubResource("ProceduralSkyMaterial_tm0p3")
+radiance_size = 4
 
 [sub_resource type="Environment" id="Environment_in38m"]
 background_mode = 2
 sky = SubResource("Sky_ygbd3")
+sky_custom_fov = 158.5
 ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
+fog_light_energy = 1.87
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_f36pg"]
 
@@ -772,6 +782,21 @@ albedo_texture = SubResource("NoiseTexture2D_lk6qh")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lbfl5"]
 material = SubResource("StandardMaterial3D_qaxak")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgedp"]
+size = Vector3(4.88878, 0.063858, 8.48765)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3p8ex"]
+size = Vector3(46.6601, 18.5273, 65.4706)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7vppq"]
+radius = 1.001
+height = 13.145
+
+[sub_resource type="Resource" id="Resource_baahq"]
+script = ExtResource("20_4wpt5")
+mode = 0
+textures = [[], []]
 
 [node name="Node3D" type="Node3D"]
 
@@ -1038,6 +1063,7 @@ mesh = SubResource("ArrayMesh_deeee")
 
 [node name="WakeupCamera" type="Camera3D" parent="TheBedroom"]
 transform = Transform3D(-0.0989324, 0, 0.0145738, 0, 0.1, 0, -0.0145738, 0, -0.0989324, 0.199222, 0.493008, -0.973447)
+current = true
 
 [node name="GetupCamera" type="Camera3D" parent="TheBedroom"]
 transform = Transform3D(-0.0989324, 0, 0.0145738, 0, 0.1, 0, -0.0145738, 0, -0.0989324, 0.227037, 0.794109, 0.554358)
@@ -1246,11 +1272,17 @@ camera_attributes = SubResource("CameraAttributesPractical_f36pg")
 
 [node name="TopDownApartmentsCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.119912, 0.992785, 0, -0.992785, 0.119912, 0, 89.4411, 41.0378)
-current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -10.4959, -15.509, 24.0179)
 mesh = SubResource("PlaneMesh_lbfl5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.45058e-09, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.918663, -0.034764, 3.26138)
+shape = SubResource("BoxShape3D_tgedp")
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("9_b3ype")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.16027, 22.189, 41.1948)
@@ -1264,8 +1296,14 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.16027, 21.3412, 41.1948)
 [node name="Sketchfab_model" parent="Sketchfab_Scene3" index="0"]
 transform = Transform3D(0.00438554, 0, 0, 0, -1.91698e-10, 0.00438554, 0, -0.00438554, -1.91698e-10, 0, -0.121107, 0)
 
-[node name="Sketchfab_Scene4" parent="." instance=ExtResource("10_fkrys")]
+[node name="GargamelsCastle" parent="." instance=ExtResource("10_fkrys")]
 transform = Transform3D(4.88272, 0, 1.07657, 0, 5, 0, -1.07657, 0, 4.88272, -27.332, -28.8403, -425.151)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GargamelsCastle"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GargamelsCastle/StaticBody3D"]
+transform = Transform3D(0.95737, 0, -0.288865, 0, 1, 0, 0.288865, 0, 0.95737, 1.08982, 8.76367, -1.17187)
+shape = SubResource("BoxShape3D_3p8ex")
 
 [node name="Sketchfab_Scene5" parent="." instance=ExtResource("11_b6yfi")]
 transform = Transform3D(-1.13622, 0, -5.89144, 0, 6, 0, 5.89144, 0, -1.13622, -36.2565, -19.1393, 911.807)
@@ -1309,49 +1347,44 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -5.99463, 104.435, 148.645
 [node name="BirdsEyeApartmentsCamera" type="Camera3D" parent="."]
 transform = Transform3D(-0.849593, 0.278795, -0.447734, 0.00535406, 0.853397, 0.521233, 0.527412, 0.440439, -0.726533, -76.2915, 88.909, -78.432)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -389.04, -15.509, 24.0179)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 376.903, -15.509, 46.8235)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 588.568, -15.509, 191.933)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -215.113, -15.509, 406.032)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 699.758, -15.509, -58.3406)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 897.806, -15.509, 191.933)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(471.666, 165.924, 0, -165.924, 471.666, 0, 0, 0, 500, -162.665, -65.9763, 952.475)
-mesh = SubResource("PlaneMesh_lbfl5")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(996.464, -83.8327, -5.6971, 83.7163, 996.322, -18.2778, 7.20842, 17.7362, 999.817, 2580.75, -15.509, 1128.6)
-mesh = SubResource("PlaneMesh_lbfl5")
-
 [node name="BirdsEyeApartmentsCamera2" type="Camera3D" parent="."]
-transform = Transform3D(0.946589, 0.150162, -0.285343, 0.102295, 0.699374, 0.707398, 0.305786, -0.698804, 0.646659, -184.248, 172.337, 204.26)
+transform = Transform3D(0.946589, 0.150162, -0.285343, 0.102295, 0.699374, 0.707398, 0.305786, -0.698804, 0.646659, -19.7461, 71.0054, 127.812)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.475, 23.874, 66.634)
+script = ExtResource("17_mttxb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_7vppq")
+
+[node name="Camera3D" type="Camera3D" parent="Player/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.53587, 0)
 current = true
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(996.464, -83.8327, -5.6971, 83.7163, 996.322, -18.2778, 7.20842, 17.7362, 999.817, 1535.52, -85.6153, -1277.58)
-mesh = SubResource("PlaneMesh_lbfl5")
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+visible = false
+occluder = ExtResource("18_jojvq")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(999.948, 7.12564, -7.33577, -7.25447, 999.817, -17.6839, 7.20842, 17.7362, 999.817, -941.672, -85.6153, -1277.58)
-mesh = SubResource("PlaneMesh_lbfl5")
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270, -15.5, -700)
+visible = false
+script = ExtResource("19_ajbcq")
+_terrain_data = null
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_baahq")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
+shader_params/u_specular = 0.5
 
 [editable path="Bedroom"]
 [editable path="Sketchfab_Scene"]
@@ -1364,6 +1397,7 @@ mesh = SubResource("PlaneMesh_lbfl5")
 [editable path="Bedroom8"]
 [editable path="Sketchfab_Scene2"]
 [editable path="Sketchfab_Scene3"]
+[editable path="GargamelsCastle"]
 [editable path="Sketchfab_Scene10"]
 [editable path="Sketchfab_Scene11"]
 [editable path="Sketchfab_Scene12"]

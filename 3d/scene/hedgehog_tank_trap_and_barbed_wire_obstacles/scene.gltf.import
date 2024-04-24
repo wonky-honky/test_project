@@ -29,6 +29,34 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/LogTrap_001_10/Object_28": {
+"generate/physics": true,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":true,"bounce":0.0,"absorbent":true,"script":null)
+
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/LogTrap_002_11/Object_32": {
+"generate/physics": true,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":true,"bounce":0.0,"absorbent":true,"script":null)
+
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/LogTrap_5/Object_16": {
+"generate/physics": true,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":true,"bounce":0.0,"absorbent":true,"script":null)
+
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/Wire_0/Object_4": {
+"generate/physics": true,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":true,"bounce":0.0,"absorbent":true,"script":null)
+
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/Wire_001_4/Object_12": {
+"generate/physics": true,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":true,"bounce":0.0,"absorbent":true,"script":null)
+
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
