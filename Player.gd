@@ -9,7 +9,7 @@ extends CharacterBody3D
 #		if camera_anglev+changev>-50 and camera_anglev+changev<50:
 #			camera_anglev+=changev
 #			rotate_x(deg_to_rad(changev))
-
+var money = 90;
 const SPEED = 50.0
 const JUMP_VELOCITY = 45.0
 

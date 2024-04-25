@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=84 format=3 uid="uid://btin64ilyqmd0"]
 
 [ext_resource type="Script" path="res://apartment.gd" id="1_3f5pa"]
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
@@ -23,6 +23,7 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://ckswy2f1ihxby" path="res://apartment.occ" id="18_jojvq"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="19_ajbcq"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="20_4wpt5"]
+[ext_resource type="Resource" path="res://3d/gargamelhterrain/data.hterrain" id="23_4t4o4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj46"]
 resource_name = "Material.002"
@@ -1397,9 +1398,8 @@ occluder = ExtResource("18_jojvq")
 
 [node name="HTerrain" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270, -15.5, -700)
-visible = false
 script = ExtResource("19_ajbcq")
-_terrain_data = null
+_terrain_data = ExtResource("23_4t4o4")
 chunk_size = 32
 collision_enabled = true
 collision_layer = 1

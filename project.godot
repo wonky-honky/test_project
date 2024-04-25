@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="if_your_happy_and_you_know_it"
-run/main_scene="res://test_live2d.tscn"
+run/main_scene="res://apartment.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Tooting="*res://tooting.gd"
+GlobalState="*res://global_state.gd"
 
 [debug]
 
