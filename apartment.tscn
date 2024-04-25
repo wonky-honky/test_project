@@ -1397,7 +1397,7 @@ visible = false
 occluder = ExtResource("18_jojvq")
 
 [node name="HTerrain" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270, -15.5, -700)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270, -15.5, -670)
 script = ExtResource("19_ajbcq")
 _terrain_data = ExtResource("23_4t4o4")
 chunk_size = 32

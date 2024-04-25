@@ -20,6 +20,17 @@ func raycast_input(event):
 			print("clicked parking meter")
 			var cont: HBoxContainer = HBoxContainer.new()
 			var wat: RichTextLabel = RichTextLabel.new();
+			var butan: Button = Button.new();
+			var the_player: CharacterBody3D = get_node("/root/Node3D/Player");			
+			butan.text = "ok ???";
+			butan.size.x = 800;
+			butan.size.y = 600;
+			butan.button_up.connect(func():
+				var thebedroom: Node3D = get_node("/root/Node3D/TheBedroom");
+				var outsido: Node3D = get_node("/root/Node3D/TheBedroom/OutsideBedroomCamera");
+				the_player.transform.origin = outsido.get_global_transform().origin;;
+				cont.queue_free();
+				);
 			cont.z_index = 1;
 			cont.size_flags_horizontal = cont.SIZE_EXPAND_FILL;
 			cont.size_flags_vertical = cont.SIZE_EXPAND_FILL;
@@ -32,8 +43,8 @@ func raycast_input(event):
 			wat.append_text("fuck you")
 			wat.pop();
 			cont.add_child(wat)
-			
-			var the_player: CharacterBody3D = get_node("/root/Node3D/Player");
+			cont.add_child(butan)
+
 			the_player.add_child(cont);
 #			cont.show();
 #			wat.show()
@@ -42,3 +53,4 @@ func raycast_input(event):
 			wat.push_font_size(50)
 			wat.append_text("now?")
 			wat.pop();
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
