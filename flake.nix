@@ -16,7 +16,7 @@
     #      repo = "nixpkgs";
     #      ref = "feat/llvm-18";
     #    };
-    godot-mine.url = "github:pillowtrucker/godot/4-2-1-stable-mine";
+    godot-mine.url = "github:wonky-honky/godot-slimflake/master";
     nixpkgs.url = "github:NixOS/nixpkgs/master";
 
     utils.url = "github:numtide/flake-utils";
@@ -43,7 +43,8 @@
               #              godot = prev.callPackage ./godot-mine {
               #                stdenv = prev.llvmPackages_18.stdenv;
               #              };
-              godot = inputs.godot-mine.packages.${system}.default;
+              godot = inputs.godot-mine.packages.${system}.godot;
+              fbx2gltf = inputs.godot-mine.packages.${system}.fbx2gltf;
               #              inherit (rec {
               #                llvmPackages_18 = prev.recurseIntoAttrs (prev.callPackage
               #                  "${inputs.nixpkgs-llvm18}/pkgs/development/compilers/llvm/18" ({
