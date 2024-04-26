@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=100 format=3 uid="uid://btin64ilyqmd0"]
 
 [ext_resource type="Script" path="res://apartment.gd" id="1_3f5pa"]
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
@@ -24,6 +24,8 @@
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="19_ajbcq"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="20_4wpt5"]
 [ext_resource type="Resource" path="res://3d/gargamelhterrain/data.hterrain" id="23_4t4o4"]
+[ext_resource type="PackedScene" uid="uid://tilb2do3cnv1" path="res://3d/scene/labrador_dog/scene.gltf" id="25_8tji5"]
+[ext_resource type="Script" path="res://3d/scene/labrador_dog/Dog.gd" id="26_afa0o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj46"]
 resource_name = "Material.002"
@@ -753,6 +755,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_77w7a")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puwe4"]
+albedo_texture = ExtResource("6_mh2ic")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yncfm"]
+material = SubResource("StandardMaterial3D_puwe4")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhntp"]
+size = Vector3(59.1216, 0.001, 59.834)
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tm0p3"]
 
 [sub_resource type="Sky" id="Sky_ygbd3"]
@@ -791,7 +803,13 @@ material = SubResource("StandardMaterial3D_qaxak")
 size = Vector3(4.88878, 0.063858, 8.48765)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3p8ex"]
-size = Vector3(46.6601, 18.5273, 65.4706)
+size = Vector3(34.2838, 18.5273, 65.4706)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1e4m"]
+size = Vector3(10.0657, 14.7983, 38.8841)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_um7ih"]
+size = Vector3(12.1482, 14.0069, 36.1106)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7vppq"]
 radius = 1.001
@@ -801,6 +819,29 @@ height = 13.145
 script = ExtResource("20_4wpt5")
 mode = 0
 textures = [[], []]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ov67"]
+size = Vector3(33.5598, 1, 40.0478)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ye7v"]
+size = Vector3(21.512, 13.7352, 4.91559)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pigei"]
+size = Vector3(16.6471, 7.52057, 59.6035)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vfcqs"]
+size = Vector3(2.84961, 6.08374, 65.1078)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_idgnf"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_spgo4"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_d3m2d"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0opnl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfdbm"]
+size = Vector3(70.9735, 1.24081, 14.0806)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_3f5pa")
@@ -1069,6 +1110,16 @@ mesh = SubResource("ArrayMesh_5rok4")
 [node name="StaticBody3D" parent="TheBedroom/Outdoor/ParkingMeter" index="0"]
 script = ExtResource("9_yjjgo")
 
+[node name="Insurance" type="MeshInstance3D" parent="TheBedroom/Outdoor/ParkingMeter/StaticBody3D" index="2"]
+transform = Transform3D(4.63093, -0.282008, 0.177306, -0.207234, -0.154092, 4.06676, -0.202035, -6.30597, -0.107304, -6.07506, -220.981, 119.642)
+mesh = SubResource("PlaneMesh_yncfm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TheBedroom/Outdoor/ParkingMeter/StaticBody3D/Insurance"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheBedroom/Outdoor/ParkingMeter/StaticBody3D/Insurance/StaticBody3D"]
+transform = Transform3D(1, -2.59097e-08, -2.17697e-08, 6.40466e-09, 1, -1.86265e-09, -1.62981e-09, 0, 1, 3.59986, 1.90735e-06, 12.6993)
+shape = SubResource("BoxShape3D_fhntp")
+
 [node name="door_typeA_001" parent="TheBedroom" index="12"]
 mesh = SubResource("ArrayMesh_deeee")
 
@@ -1288,7 +1339,7 @@ camera_attributes = SubResource("CameraAttributesPractical_f36pg")
 transform = Transform3D(1, 0, 0, 0, 0.119912, 0.992785, 0, -0.992785, 0.119912, 0, 89.4411, 41.0378)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -10.4959, -15.509, 24.0179)
+transform = Transform3D(972.644, 0, 0, 0, 200, 0, 0, 0, 210.552, -10.496, -15.5, 24.018)
 mesh = SubResource("PlaneMesh_lbfl5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -1316,8 +1367,16 @@ transform = Transform3D(4.88272, 0, 1.07657, 0, 5, 0, -1.07657, 0, 4.88272, -27.
 [node name="StaticBody3D" type="StaticBody3D" parent="GargamelsCastle"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GargamelsCastle/StaticBody3D"]
-transform = Transform3D(0.95737, 0, -0.288865, 0, 1, 0, 0.288865, 0, 0.95737, 1.08982, 8.76367, -1.17187)
+transform = Transform3D(0.956778, 0, -0.290819, 0, 1, 0, 0.290819, 0, 0.956778, 4.47841, 8.76367, -4.13275)
 shape = SubResource("BoxShape3D_3p8ex")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GargamelsCastle/StaticBody3D"]
+transform = Transform3D(0.985724, 0, -0.168369, 0, 1, 0, 0.168369, 0, 0.985724, 23.0097, 6.89917, -10.0851)
+shape = SubResource("BoxShape3D_h1e4m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="GargamelsCastle/StaticBody3D"]
+transform = Transform3D(0.963891, 0, -0.266296, 0, 1, 0, 0.266296, 0, 0.963891, -10.5439, 6.50345, -23.4387)
+shape = SubResource("BoxShape3D_um7ih")
 
 [node name="Sketchfab_Scene5" parent="." instance=ExtResource("11_b6yfi")]
 transform = Transform3D(-1.13622, 0, -5.89144, 0, 6, 0, 5.89144, 0, -1.13622, -36.2565, -19.1393, 911.807)
@@ -1398,6 +1457,7 @@ occluder = ExtResource("18_jojvq")
 
 [node name="HTerrain" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270, -15.5, -670)
+visible = false
 script = ExtResource("19_ajbcq")
 _terrain_data = ExtResource("23_4t4o4")
 chunk_size = 32
@@ -1416,6 +1476,148 @@ shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
 shader_params/u_specular = 0.5
 
+[node name="BridgeCollider1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.261, -28.7755, -227.524)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BridgeCollider1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22855, 1.2116, 0.503311)
+shape = SubResource("BoxShape3D_7ov67")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BridgeCollider1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0365, 6.98639, -12.6167)
+shape = SubResource("BoxShape3D_0ye7v")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="BridgeCollider1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0365, 6.03119, 5.29268)
+shape = SubResource("BoxShape3D_0ye7v")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BridgeCollider1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85643, 11.7927, -5.93704)
+shape = SubResource("BoxShape3D_pigei")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BridgeCollider1"]
+transform = Transform3D(0.9982, 0, -0.0599684, 0, 1, 0, 0.0599684, 0, 0.9982, -6.16035, 18.9006, -2.30841)
+shape = SubResource("BoxShape3D_vfcqs")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="BridgeCollider1"]
+transform = Transform3D(0.9982, 0, -0.0599684, 0, 1, 0, 0.0599684, 0, 0.9982, 10.753, 18.9006, -2.30841)
+shape = SubResource("BoxShape3D_vfcqs")
+
+[node name="WorldBoundaries" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBoundaries"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.7861, 0)
+shape = SubResource("WorldBoundaryShape3D_idgnf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WorldBoundaries"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -232.913, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_spgo4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="WorldBoundaries"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 255.026, 0, 568.071)
+shape = SubResource("WorldBoundaryShape3D_d3m2d")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="WorldBoundaries"]
+transform = Transform3D(0.968583, 0.24869, 1.08706e-08, 0, -4.37114e-08, 1, 0.24869, -0.968583, -4.23381e-08, 0, 27.2682, 1506.58)
+shape = SubResource("WorldBoundaryShape3D_0opnl")
+
+[node name="Dog" parent="." instance=ExtResource("25_8tji5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.4347, -6.76758, -376.002)
+
+[node name="Skeleton3D" parent="Dog/Sketchfab_model/root/GLTF_SceneRootNode/Dog Armature_54/GLTF_created_0" index="0"]
+bones/1/position = Vector3(0, 0.472439, 0.000905931)
+bones/1/rotation = Quaternion(-2.98023e-08, 0, 0, 1)
+bones/2/rotation = Quaternion(0.784172, -9.33925e-07, -1.1823e-06, 0.620544)
+bones/3/rotation = Quaternion(-5.07613e-07, 0.994848, -0.101373, 1.97263e-06)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.00552715, -2.33498e-05, -1.68332e-07, 0.999985)
+bones/5/rotation = Quaternion(0.299212, 2.27028e-05, -8.94441e-06, 0.954187)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.153559, 2.37005e-06, -5.75284e-07, 0.98814)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(-0.199288, 1.2245e-07, 2.68689e-07, 0.979941)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-0.601145, -2.51483e-10, 9.50683e-07, 0.79914)
+bones/10/rotation = Quaternion(6.49923e-07, 0.569658, 0.821882, -4.50474e-07)
+bones/10/scale = Vector3(0.529136, 0.529136, 0.529136)
+bones/12/rotation = Quaternion(-0.400107, 0.698824, -0.59265, -0.0180323)
+bones/13/rotation = Quaternion(0.0104329, 0.939244, 0.330949, -0.0904693)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.0293413, -0.0283928, -0.0827752, 0.995732)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(-0.0255182, 0.0316548, 0.0016575, 0.999172)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/rotation = Quaternion(0.400107, 0.698824, -0.592651, 0.0180311)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(-0.0104329, 0.939244, 0.330949, 0.0904694)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(-0.0293414, 0.028393, 0.0827751, 0.995731)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(-0.0255182, -0.0316548, -0.00165749, 0.999172)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(0.911138, -4.89427e-08, -1.33221e-06, -0.412102)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(0.346368, -2.01322e-08, -4.00923e-07, 0.938099)
+bones/22/rotation = Quaternion(-0.462396, 0.526596, 0.53604, 0.470689)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(0.74305, 0.655961, -0.076692, -0.108213)
+bones/23/scale = Vector3(1, 1, 1)
+bones/24/rotation = Quaternion(-4.40831e-07, 0.974836, -0.222924, 2.16543e-06)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/rotation = Quaternion(0.462425, 0.52657, 0.536015, -0.470718)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.74305, -0.655961, 0.0766935, -0.108214)
+bones/26/scale = Vector3(1, 1, 1)
+bones/27/rotation = Quaternion(4.32895e-07, 0.974835, -0.222927, -2.16627e-06)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/position = Vector3(0.247064, 0.113761, 0.135106)
+bones/28/rotation = Quaternion(0.578042, 0.529147, 0.40999, -0.466669)
+bones/29/rotation = Quaternion(0.619124, 0.556747, 0.370317, 0.411806)
+bones/29/scale = Vector3(1, 1, 1)
+bones/30/rotation = Quaternion(0.800182, -7.34708e-08, 3.05884e-07, 0.599757)
+bones/31/rotation = Quaternion(-3.77263e-07, 0.836357, -0.548186, 7.54546e-07)
+bones/31/scale = Vector3(1, 1, 1)
+bones/32/rotation = Quaternion(0.578041, -0.529148, -0.409992, -0.466667)
+bones/32/scale = Vector3(1, 1, 1)
+bones/33/rotation = Quaternion(0.619124, -0.556747, -0.370317, 0.411806)
+bones/33/scale = Vector3(1, 1, 1)
+bones/34/rotation = Quaternion(0.800182, 5.05251e-08, -2.62641e-07, 0.599757)
+bones/35/rotation = Quaternion(3.67798e-07, 0.836357, -0.548185, -7.61342e-07)
+bones/36/rotation = Quaternion(0.901215, 5.96944e-07, -1.46405e-06, 0.433372)
+bones/36/scale = Vector3(1, 1, 1)
+bones/37/rotation = Quaternion(0.068168, 9.58031e-09, -4.518e-08, 0.997674)
+bones/38/rotation = Quaternion(0.0814641, -3.44445e-09, 1.09589e-09, 0.996676)
+bones/39/rotation = Quaternion(0.189404, 2.34136e-07, 4.13029e-09, 0.981899)
+bones/40/rotation = Quaternion(0.203013, 1.07364e-14, 4.84021e-08, 0.979176)
+bones/41/rotation = Quaternion(0.0466554, -9.87756e-15, 1.11235e-08, 0.998911)
+bones/46/rotation = Quaternion(0.918441, -1.76043e-07, -4.08753e-07, 0.395558)
+bones/47/rotation = Quaternion(-5.77394e-07, 0.929138, -0.369734, 6.23957e-07)
+bones/48/rotation = Quaternion(0.940692, -1.50989e-07, -4.18655e-07, 0.339263)
+bones/48/scale = Vector3(1, 1, 1)
+bones/49/rotation = Quaternion(-6.25386e-07, 0.937708, -0.347425, 8.53279e-07)
+bones/49/scale = Vector3(1, 1, 1)
+bones/50/rotation = Quaternion(0.918441, 1.76043e-07, 4.08753e-07, 0.395558)
+bones/51/rotation = Quaternion(5.77394e-07, 0.929138, -0.369734, -6.23957e-07)
+bones/52/rotation = Quaternion(0.940692, 1.50989e-07, 4.18655e-07, 0.339263)
+bones/52/scale = Vector3(1, 1, 1)
+bones/53/rotation = Quaternion(6.25386e-07, 0.937708, -0.347425, -8.53279e-07)
+bones/53/scale = Vector3(1, 1, 1)
+bones/54/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="Object_18" parent="Dog/Sketchfab_model/root/GLTF_SceneRootNode/Dog Armature_54/GLTF_created_0/Skeleton3D" index="0"]
+transform = Transform3D(0.529136, -8.52651e-13, -2.84217e-13, -5.96856e-12, 0.529136, 1.49012e-08, 2.64322e-12, 0, 0.529136, -4.80471e-12, -0.0755539, -0.0472212)
+
+[node name="StaticBody3D" parent="Dog/Sketchfab_model/root/GLTF_SceneRootNode/Dog Armature_54/GLTF_created_0/Skeleton3D/Object_7" index="0"]
+script = ExtResource("26_afa0o")
+
+[node name="GoodBridge" type="StaticBody3D" parent="."]
+transform = Transform3D(0.993003, 0.118092, 0, -0.118092, 0.993003, 0, 0, 0, 1, 132.89, -17.5988, -566.708)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoodBridge"]
+transform = Transform3D(0.995867, 0, 0.0908238, 0, 1, 0, -0.0908238, 0, 0.995867, 8.57635, 1.05226, 0.930969)
+shape = SubResource("BoxShape3D_gfdbm")
+
 [editable path="Bedroom"]
 [editable path="Sketchfab_Scene"]
 [editable path="Bedroom2"]
@@ -1431,3 +1633,4 @@ shader_params/u_specular = 0.5
 [editable path="Sketchfab_Scene10"]
 [editable path="Sketchfab_Scene11"]
 [editable path="Sketchfab_Scene12"]
+[editable path="Dog"]

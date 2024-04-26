@@ -3,8 +3,11 @@ extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass  # Replace with function body.
-
+	var insurance: Node = find_child("Insurance");
+	insurance.visible = false;
+	var insurance_collider: CollisionShape3D = insurance.find_child("CollisionShape3D");
+	insurance_collider.disabled = true;
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,14 +24,29 @@ func raycast_input(event):
 			var cont: HBoxContainer = HBoxContainer.new()
 			var wat: RichTextLabel = RichTextLabel.new();
 			var butan: Button = Button.new();
+			var butan2: Button = Button.new();
 			var the_player: CharacterBody3D = get_node("/root/Node3D/Player");			
-			butan.text = "ok ???";
+			butan.text = "Buy exit";
 			butan.size.x = 800;
 			butan.size.y = 600;
 			butan.button_up.connect(func():
 				var thebedroom: Node3D = get_node("/root/Node3D/TheBedroom");
 				var outsido: Node3D = get_node("/root/Node3D/TheBedroom/OutsideBedroomCamera");
 				the_player.transform.origin = outsido.get_global_transform().origin;;
+				cont.queue_free();
+				);
+			butan2.text = "Buy exit with insurance";
+			butan2.size.x = 800;
+			butan2.size.y = 600;
+			butan2.button_up.connect(func():
+				var thebedroom: Node3D = get_node("/root/Node3D/TheBedroom");
+				var outsido: Node3D = get_node("/root/Node3D/TheBedroom/OutsideBedroomCamera");
+				var insurance: Node = find_child("Insurance");
+				insurance.visible = true;
+				var insurance_collider: CollisionShape3D = insurance.find_child("CollisionShape3D");
+				insurance_collider.disabled = false;
+				the_player.transform.origin = outsido.get_global_transform().origin;
+				
 				cont.queue_free();
 				);
 			cont.z_index = 1;
@@ -44,6 +62,7 @@ func raycast_input(event):
 			wat.pop();
 			cont.add_child(wat)
 			cont.add_child(butan)
+			cont.add_child(butan2)
 
 			the_player.add_child(cont);
 #			cont.show();
