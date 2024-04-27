@@ -58,7 +58,7 @@ func raycast_input(event):
 			wat.size_flags_vertical = wat.SIZE_EXPAND_FILL;
 			wat.bbcode_enabled = true;
 			wat.push_font_size(50)
-			wat.append_text("fuck you")
+			wat.append_text("Pay to exit your hovel?")
 			wat.pop();
 			cont.add_child(wat)
 			cont.add_child(butan)
@@ -70,6 +70,5 @@ func raycast_input(event):
 #			var fucking_container = the_player.find_child("CenterContainer");
 #			fucking_container.add_child(wat);
 			wat.push_font_size(50)
-			wat.append_text("now?")
 			wat.pop();
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;

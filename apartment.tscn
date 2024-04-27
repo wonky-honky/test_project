@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=102 format=3 uid="uid://btin64ilyqmd0"]
 
 [ext_resource type="Script" path="res://apartment.gd" id="1_3f5pa"]
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
@@ -26,6 +26,8 @@
 [ext_resource type="Resource" path="res://3d/gargamelhterrain/data.hterrain" id="23_4t4o4"]
 [ext_resource type="PackedScene" uid="uid://tilb2do3cnv1" path="res://3d/scene/labrador_dog/scene.gltf" id="25_8tji5"]
 [ext_resource type="Script" path="res://3d/scene/labrador_dog/Dog.gd" id="26_afa0o"]
+[ext_resource type="PackedScene" uid="uid://7oc1d7gx6umy" path="res://3d/scene/hand/scene.gltf" id="27_6m6nw"]
+[ext_resource type="Script" path="res://3d/scene/hand/HandPetting.gd" id="28_y4peo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj46"]
 resource_name = "Material.002"
@@ -1536,7 +1538,6 @@ bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(0.153559, 2.37005e-06, -5.75284e-07, 0.98814)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/rotation = Quaternion(-0.199288, 1.2245e-07, 2.68689e-07, 0.979941)
-bones/7/scale = Vector3(1, 1, 1)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/rotation = Quaternion(-0.601145, -2.51483e-10, 9.50683e-07, 0.79914)
 bones/10/rotation = Quaternion(6.49923e-07, 0.569658, 0.821882, -4.50474e-07)
@@ -1545,7 +1546,6 @@ bones/12/rotation = Quaternion(-0.400107, 0.698824, -0.59265, -0.0180323)
 bones/13/rotation = Quaternion(0.0104329, 0.939244, 0.330949, -0.0904693)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/rotation = Quaternion(-0.0293413, -0.0283928, -0.0827752, 0.995732)
-bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(-0.0255182, 0.0316548, 0.0016575, 0.999172)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/rotation = Quaternion(0.400107, 0.698824, -0.592651, 0.0180311)
@@ -1606,7 +1606,7 @@ bones/53/scale = Vector3(1, 1, 1)
 bones/54/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
 
 [node name="Object_18" parent="Dog/Sketchfab_model/root/GLTF_SceneRootNode/Dog Armature_54/GLTF_created_0/Skeleton3D" index="0"]
-transform = Transform3D(0.529136, -8.52651e-13, -2.84217e-13, -5.96856e-12, 0.529136, 1.49012e-08, 2.64322e-12, 0, 0.529136, -4.80471e-12, -0.0755539, -0.0472212)
+transform = Transform3D(0.529136, 9.45874e-11, -2.00941e-11, -1.00954e-10, 0.529136, 9.68575e-07, 2.09184e-11, -1.02818e-06, 0.529136, -2.986e-10, -0.075556, -0.0472176)
 
 [node name="StaticBody3D" parent="Dog/Sketchfab_model/root/GLTF_SceneRootNode/Dog Armature_54/GLTF_created_0/Skeleton3D/Object_7" index="0"]
 script = ExtResource("26_afa0o")
@@ -1617,6 +1617,11 @@ transform = Transform3D(0.993003, 0.118092, 0, -0.118092, 0.993003, 0, 0, 0, 1, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodBridge"]
 transform = Transform3D(0.995867, 0, 0.0908238, 0, 1, 0, -0.0908238, 0, 0.995867, 8.57635, 1.05226, 0.930969)
 shape = SubResource("BoxShape3D_gfdbm")
+
+[node name="HandPetting" parent="." instance=ExtResource("27_6m6nw")]
+transform = Transform3D(-0.292166, 0.30452, -0.426505, 0.384968, 0.456036, 0.0618927, 0.355582, -0.243514, -0.417448, 75.274, -4.01482, -374.188)
+visible = false
+script = ExtResource("28_y4peo")
 
 [editable path="Bedroom"]
 [editable path="Sketchfab_Scene"]
@@ -1634,3 +1639,4 @@ shape = SubResource("BoxShape3D_gfdbm")
 [editable path="Sketchfab_Scene11"]
 [editable path="Sketchfab_Scene12"]
 [editable path="Dog"]
+[editable path="HandPetting"]

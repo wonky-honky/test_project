@@ -11,5 +11,9 @@ func _process(delta: float) -> void:
 	pass
 func raycast_input(event):
 	if event.is_action_pressed("click"):
-		var ani: AnimationPlayer = get_node("/root/Node3D/Dog/AnimationPlayer");
+		var ani: AnimationMixer = get_node("/root/Node3D/Dog/AnimationPlayer");
+		var petting_hand: Node3D = get_node("/root/Node3D/HandPetting");
+		petting_hand.visible = true;
+		
 		ani.play("Animation");
+		ani.animation_finished.connect(func(_ignore): petting_hand.visible = false);
