@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bybm6onpqce4w"
+path.s3tc="res://.godot/imported/Vampire tomboy-d6a8cdd6d8ab5b40adcec3df0e193fa9_Vampire tomboy clothing and stuffs 2.png-f5b0e25abfc1d1f9bfa6c21ceb044798.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "5f033ea4f367b52c69b2408b6f01b47f"
+}
+
+[deps]
+
+source_file="res://3d/scene/Tomboy vampire/Vampire tomboy-d6a8cdd6d8ab5b40adcec3df0e193fa9_Vampire tomboy clothing and stuffs 2.png"
+dest_files=["res://.godot/imported/Vampire tomboy-d6a8cdd6d8ab5b40adcec3df0e193fa9_Vampire tomboy clothing and stuffs 2.png-f5b0e25abfc1d1f9bfa6c21ceb044798.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

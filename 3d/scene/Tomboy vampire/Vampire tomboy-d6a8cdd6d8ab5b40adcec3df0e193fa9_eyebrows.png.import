@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cj3yiiwe7l410"
+path.s3tc="res://.godot/imported/Vampire tomboy-d6a8cdd6d8ab5b40adcec3df0e193fa9_eyebrows.png-98440ef0ed9013516fdb72815aa0f9e8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "489963c461d6485f4af32430695122b5"
+}
+
+[deps]
+
+source_file="res://3d/scene/Tomboy vampire/Vampire tomboy-d6a8cdd6d8ab5b40adcec3df0e193fa9_eyebrows.png"
+dest_files=["res://.godot/imported/Vampire tomboy-d6a8cdd6d8ab5b40adcec3df0e193fa9_eyebrows.png-98440ef0ed9013516fdb72815aa0f9e8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

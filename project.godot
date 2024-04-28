@@ -19,11 +19,16 @@ config/icon="res://icon.svg"
 
 Tooting="*res://tooting.gd"
 GlobalState="*res://global_state.gd"
+Chorus="*res://chorus.gd"
 
 [debug]
 
 settings/stdout/print_fps=true
 gdscript/warnings/integer_division=0
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
