@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "mushroom.moc3",
+		"Textures": [
+			"mushroom.4096/texture_00.png"
+		],
+		"Physics": "mushroom.physics3.json",
+		"DisplayInfo": "mushroom.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

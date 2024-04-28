@@ -1,0 +1,485 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroup",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroup",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroup",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroup2",
+			"Name": "左目　開閉"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "左目　笑顔"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroup2",
+			"Name": "右目　開閉"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "右目　笑顔"
+		},
+		{
+			"Id": "ParamEyeForm",
+			"GroupId": "ParamGroup2",
+			"Name": "目変形"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroup2",
+			"Name": "目玉 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroup2",
+			"Name": "目玉 Y"
+		},
+		{
+			"Id": "ParamEyeBallForm",
+			"GroupId": "ParamGroup2",
+			"Name": "目玉縮小"
+		},
+		{
+			"Id": "ParamEyeEffectYure",
+			"GroupId": "ParamGroup2",
+			"Name": "キラキラ拡縮"
+		},
+		{
+			"Id": "ParamEyeBallHi",
+			"GroupId": "ParamGroup2",
+			"Name": "ハイライトぶれ"
+		},
+		{
+			"Id": "ParamEyeEffect",
+			"GroupId": "ParamGroup2",
+			"Name": "目エフェクト"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　上下"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　上下"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　左右"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　左右"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　角度"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　角度"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　変形"
+		},
+		{
+			"Id": "ParamMouthForm01",
+			"GroupId": "ParamGroup4",
+			"Name": "口　変形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroup4",
+			"Name": "口　開閉"
+		},
+		{
+			"Id": "ParamMouthForm02",
+			"GroupId": "ParamGroup4",
+			"Name": "口の変形2"
+		},
+		{
+			"Id": "ParamMouthSize",
+			"GroupId": "ParamGroup4",
+			"Name": "口拡縮2"
+		},
+		{
+			"Id": "ParamTear",
+			"GroupId": "ParamGroup5",
+			"Name": "涙"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "ParamGroup5",
+			"Name": "照れ"
+		},
+		{
+			"Id": "ParamGlasses",
+			"GroupId": "",
+			"Name": "眼鏡表示"
+		},
+		{
+			"Id": "ParamBackHair",
+			"GroupId": "",
+			"Name": "後ろ髪表示"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroup6",
+			"Name": "体の回転　X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroup6",
+			"Name": "体の回転　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroup6",
+			"Name": "体の回転　Z"
+		},
+		{
+			"Id": "ParamAngleD",
+			"GroupId": "ParamGroup6",
+			"Name": "上体"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "ParamGroup6",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamShoulderUp",
+			"GroupId": "ParamGroup6",
+			"Name": "肩すくめ"
+		},
+		{
+			"Id": "ParamLegL",
+			"GroupId": "ParamGroup12",
+			"Name": "左脚"
+		},
+		{
+			"Id": "ParamKneesL",
+			"GroupId": "ParamGroup12",
+			"Name": "左ひざ"
+		},
+		{
+			"Id": "ParamAnkleL",
+			"GroupId": "ParamGroup12",
+			"Name": "左足首"
+		},
+		{
+			"Id": "ParamLegR",
+			"GroupId": "ParamGroup7",
+			"Name": "右脚"
+		},
+		{
+			"Id": "ParamKneesR",
+			"GroupId": "ParamGroup7",
+			"Name": "右ひざ"
+		},
+		{
+			"Id": "ParamAnkleR",
+			"GroupId": "ParamGroup7",
+			"Name": "右足首"
+		},
+		{
+			"Id": "ParamArmL01",
+			"GroupId": "ParamGroup8",
+			"Name": "左上腕"
+		},
+		{
+			"Id": "ParamArmL02",
+			"GroupId": "ParamGroup8",
+			"Name": "左前腕"
+		},
+		{
+			"Id": "ParamHandL01",
+			"GroupId": "ParamGroup8",
+			"Name": "左手　手首"
+		},
+		{
+			"Id": "ParamHandL02",
+			"GroupId": "ParamGroup8",
+			"Name": "左手首　回転"
+		},
+		{
+			"Id": "ParamArmR01",
+			"GroupId": "ParamGroup9",
+			"Name": "右上腕"
+		},
+		{
+			"Id": "ParamArmR02",
+			"GroupId": "ParamGroup9",
+			"Name": "右前腕"
+		},
+		{
+			"Id": "ParamHandR01",
+			"GroupId": "ParamGroup9",
+			"Name": "右手　手首"
+		},
+		{
+			"Id": "ParamHandR02",
+			"GroupId": "ParamGroup9",
+			"Name": "右手首　回転"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "ParamGroup10",
+			"Name": "髪揺れ　前"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "ParamGroup10",
+			"Name": "髪揺れ　横"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "ParamGroup10",
+			"Name": "髪揺れ　後"
+		},
+		{
+			"Id": "ParamRibbon",
+			"GroupId": "ParamGroup10",
+			"Name": "リボン　揺れ"
+		},
+		{
+			"Id": "ParamSkirt",
+			"GroupId": "ParamGroup10",
+			"Name": "スカート　揺れ"
+		},
+		{
+			"Id": "ParamScale",
+			"GroupId": "ParamGroup11",
+			"Name": "全体の拡縮"
+		},
+		{
+			"Id": "ParamPositionX",
+			"GroupId": "ParamGroup11",
+			"Name": "全体の位置X"
+		},
+		{
+			"Id": "ParamPositionY",
+			"GroupId": "ParamGroup11",
+			"Name": "全体の位置Y"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "顔"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "目"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "眉"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "口"
+		},
+		{
+			"Id": "ParamGroup5",
+			"GroupId": "",
+			"Name": "表情"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "体"
+		},
+		{
+			"Id": "ParamGroup12",
+			"GroupId": "",
+			"Name": "左脚"
+		},
+		{
+			"Id": "ParamGroup7",
+			"GroupId": "",
+			"Name": "右脚"
+		},
+		{
+			"Id": "ParamGroup8",
+			"GroupId": "",
+			"Name": "左腕"
+		},
+		{
+			"Id": "ParamGroup9",
+			"GroupId": "",
+			"Name": "右腕"
+		},
+		{
+			"Id": "ParamGroup10",
+			"GroupId": "",
+			"Name": "揺れ"
+		},
+		{
+			"Id": "ParamGroup11",
+			"GroupId": "",
+			"Name": "全体移動"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part10",
+			"Name": "HIT"
+		},
+		{
+			"Id": "Part21",
+			"Name": "コアパーツ"
+		},
+		{
+			"Id": "Part",
+			"Name": "髪"
+		},
+		{
+			"Id": "Part2",
+			"Name": "メガネ"
+		},
+		{
+			"Id": "Part5",
+			"Name": "顔"
+		},
+		{
+			"Id": "Part18",
+			"Name": "耳"
+		},
+		{
+			"Id": "Part17",
+			"Name": "首"
+		},
+		{
+			"Id": "Part9",
+			"Name": "ベスト"
+		},
+		{
+			"Id": "Part25",
+			"Name": "左手首差分2"
+		},
+		{
+			"Id": "Part24",
+			"Name": "左手首差分1"
+		},
+		{
+			"Id": "Part6",
+			"Name": "左腕"
+		},
+		{
+			"Id": "Part13",
+			"Name": "右腕"
+		},
+		{
+			"Id": "Part23",
+			"Name": "左脚"
+		},
+		{
+			"Id": "Part15",
+			"Name": "右脚"
+		},
+		{
+			"Id": "PartSketch0",
+			"Name": "[ 下絵 ]"
+		},
+		{
+			"Id": "Part14",
+			"Name": "左足"
+		},
+		{
+			"Id": "Part16",
+			"Name": "コアパーツ"
+		},
+		{
+			"Id": "Part3",
+			"Name": "左パーツ"
+		},
+		{
+			"Id": "Part4",
+			"Name": "右パーツ"
+		},
+		{
+			"Id": "Part7",
+			"Name": "左目"
+		},
+		{
+			"Id": "Part22",
+			"Name": "右目"
+		},
+		{
+			"Id": "Part19",
+			"Name": "眉毛"
+		},
+		{
+			"Id": "Part20",
+			"Name": "鼻"
+		},
+		{
+			"Id": "Part8",
+			"Name": "口"
+		},
+		{
+			"Id": "Part26",
+			"Name": "左手首差分1"
+		},
+		{
+			"Id": "Part27",
+			"Name": "左手首差分2"
+		},
+		{
+			"Id": "Part11",
+			"Name": "右手首差分1"
+		},
+		{
+			"Id": "Part12",
+			"Name": "右手首差分2"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAngleX",
+			"ParamAngleY"
+		],
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"ParamPositionX",
+			"ParamPositionY"
+		]
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Caligula.moc3",
+		"Textures": [
+			"Caligula.8192/texture_00.png"
+		],
+		"Physics": "Caligula.physics3.json",
+		"DisplayInfo": "Caligula.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

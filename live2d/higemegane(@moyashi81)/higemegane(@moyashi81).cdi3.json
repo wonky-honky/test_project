@@ -1,0 +1,17 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "口　開閉"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": []
+}

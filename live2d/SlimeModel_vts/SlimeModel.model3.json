@@ -1,0 +1,28 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "SlimeModel.moc3",
+		"Textures": [
+			"SlimeModel.4096/texture_00.png",
+			"SlimeModel.4096/texture_01.png",
+			"SlimeModel.4096/texture_02.png"
+		],
+		"Physics": "SlimeModel.physics3.json",
+		"DisplayInfo": "SlimeModel.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

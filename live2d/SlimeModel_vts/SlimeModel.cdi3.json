@@ -1,0 +1,650 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "FolderHeadAngles",
+			"GroupId": "ParamGroup",
+			"Name": "✖✖ Head Angles ✖✖"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroup",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroup",
+			"Name": "Angle Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroup",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "FolderHeadAugAngles",
+			"GroupId": "ParamGroup",
+			"Name": "✖✖ Head Aug Angles ✖✖"
+		},
+		{
+			"Id": "ParamAugAngleX",
+			"GroupId": "ParamGroup",
+			"Name": "Aug Angle X"
+		},
+		{
+			"Id": "ParamAugAngleY",
+			"GroupId": "ParamGroup",
+			"Name": "Aug Angle Y"
+		},
+		{
+			"Id": "ParamAugAngleZ",
+			"GroupId": "ParamGroup",
+			"Name": "Aug Angle Z"
+		},
+		{
+			"Id": "FolderHeadSquishPhysics",
+			"GroupId": "ParamGroup",
+			"Name": "✖ Head Squish Physics ✖"
+		},
+		{
+			"Id": "ParamHeadSquishX",
+			"GroupId": "ParamGroup",
+			"Name": "Head Squish X"
+		},
+		{
+			"Id": "ParamHeadSquishY",
+			"GroupId": "ParamGroup",
+			"Name": "Head Squish Y"
+		},
+		{
+			"Id": "ParamHeadSquishWiggle",
+			"GroupId": "ParamGroup",
+			"Name": "Head Squish Wiggle"
+		},
+		{
+			"Id": "FolderBodyAngles",
+			"GroupId": "ParamGroup5",
+			"Name": "✖✖ Body Angles ✖✖"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroup5",
+			"Name": "Body X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroup5",
+			"Name": "Body Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroup5",
+			"Name": "Body Z"
+		},
+		{
+			"Id": "FolderBodyAugAngles",
+			"GroupId": "ParamGroup5",
+			"Name": "✖✖ Body Aug Angles ✖✖"
+		},
+		{
+			"Id": "ParamAugBodyAngleX",
+			"GroupId": "ParamGroup5",
+			"Name": "Aug Body X"
+		},
+		{
+			"Id": "ParamAugBodyAngleY",
+			"GroupId": "ParamGroup5",
+			"Name": "Aug Body Y"
+		},
+		{
+			"Id": "ParamAugBodyAngleZ",
+			"GroupId": "ParamGroup5",
+			"Name": "Aug Body Z"
+		},
+		{
+			"Id": "FolderBodyMovement",
+			"GroupId": "ParamGroup5",
+			"Name": "✖✖ Body Movement ✖✖"
+		},
+		{
+			"Id": "ParamArmLRotation",
+			"GroupId": "ParamGroup5",
+			"Name": "Arm L Rotation"
+		},
+		{
+			"Id": "ParamHandLRotation",
+			"GroupId": "ParamGroup5",
+			"Name": "Hand L Rotation"
+		},
+		{
+			"Id": "ParamArmRRotation",
+			"GroupId": "ParamGroup5",
+			"Name": "Arm R Rotation"
+		},
+		{
+			"Id": "ParamHandRRotation",
+			"GroupId": "ParamGroup5",
+			"Name": "Hand R Rotation"
+		},
+		{
+			"Id": "ParamHipShake",
+			"GroupId": "ParamGroup5",
+			"Name": "Hip Shake"
+		},
+		{
+			"Id": "FolderBodyPhysics",
+			"GroupId": "ParamGroup5",
+			"Name": "✖✖ Body Physics ✖✖"
+		},
+		{
+			"Id": "ParamArmLPhysics",
+			"GroupId": "ParamGroup5",
+			"Name": "Arm L Physics"
+		},
+		{
+			"Id": "ParamHandLPhysics",
+			"GroupId": "ParamGroup5",
+			"Name": "Hand L Physics"
+		},
+		{
+			"Id": "ParamArmRPhysics",
+			"GroupId": "ParamGroup5",
+			"Name": "Arm R Physics"
+		},
+		{
+			"Id": "ParamHandRPhysics",
+			"GroupId": "ParamGroup5",
+			"Name": "Hand R Physics"
+		},
+		{
+			"Id": "ParamAbsPhysicsX",
+			"GroupId": "ParamGroup5",
+			"Name": "Abs Physics X"
+		},
+		{
+			"Id": "ParamAbsPhysicsY",
+			"GroupId": "ParamGroup5",
+			"Name": "Abs Physics Y"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "ParamGroup5",
+			"Name": "Breath"
+		},
+		{
+			"Id": "FolderEyeL",
+			"GroupId": "ParamGroup2",
+			"Name": "✖✖ Eye L ✖✖"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroup2",
+			"Name": "Eye L Open"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "Eye L Smile"
+		},
+		{
+			"Id": "FolderEyeR",
+			"GroupId": "ParamGroup2",
+			"Name": "✖✖ Eye R ✖✖"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroup2",
+			"Name": "Eye R Open"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "Eye R Smile"
+		},
+		{
+			"Id": "FolderEyeballs",
+			"GroupId": "ParamGroup2",
+			"Name": "✖✖ Eyeballs ✖✖"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroup2",
+			"Name": "Eyeball X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroup2",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "FolderEyeLPhysics",
+			"GroupId": "ParamGroup6",
+			"Name": "✖✖ EyeL Physics ✖✖"
+		},
+		{
+			"Id": "ParamEyeLShinesPhysicsX",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeL Shines Physics X"
+		},
+		{
+			"Id": "ParamEyeLShinesPhysicsY",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeL Shines Physics Y"
+		},
+		{
+			"Id": "ParamEyeLIrisPhysicsX",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeL Iris Physics X"
+		},
+		{
+			"Id": "ParamEyeLIrisPhysicsY",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeL Iris Physics Y"
+		},
+		{
+			"Id": "FolderEyeRPhysics",
+			"GroupId": "ParamGroup6",
+			"Name": "✖✖ EyeR Physics ✖✖"
+		},
+		{
+			"Id": "ParamEyeRShinesPhysicsX",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeR Shines Physics X"
+		},
+		{
+			"Id": "ParamEyeRShinesPhysicsY",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeR Shines Physics Y"
+		},
+		{
+			"Id": "ParamEyeRIrisPhysicsX",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeR Iris Physics X"
+		},
+		{
+			"Id": "ParamEyeRIrisPhysicsY",
+			"GroupId": "ParamGroup6",
+			"Name": "EyeR Iris Physics Y"
+		},
+		{
+			"Id": "FolderBrowsL",
+			"GroupId": "ParamGroup3",
+			"Name": "✖✖ Brows L ✖✖"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow L X"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow L Y"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow L Angle"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow L Form"
+		},
+		{
+			"Id": "ParamBrowLPhysicxX",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow L Physics X"
+		},
+		{
+			"Id": "ParamBrowLPhysicxY",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow L Physics Y"
+		},
+		{
+			"Id": "FolderBrowsR",
+			"GroupId": "ParamGroup3",
+			"Name": "✖✖ Brows R ✖✖"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow R X"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow R Y"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow R Angle"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow R Form"
+		},
+		{
+			"Id": "ParamBrowRPhysicxX",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow R Physics X"
+		},
+		{
+			"Id": "ParamBrowRPhysicxY",
+			"GroupId": "ParamGroup3",
+			"Name": "Brow R Physics Y"
+		},
+		{
+			"Id": "FolderMouth",
+			"GroupId": "ParamGroup4",
+			"Name": "✖✖ Mouth ✖✖"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "ParamGroup4",
+			"Name": "Mouth Form"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroup4",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "ParamMouthX",
+			"GroupId": "ParamGroup4",
+			"Name": "Mouth X"
+		},
+		{
+			"Id": "FolderEarPhysics",
+			"GroupId": "ParamGroup7",
+			"Name": "✖✖ Ears Physics ✖✖"
+		},
+		{
+			"Id": "ParamEarLX",
+			"GroupId": "ParamGroup7",
+			"Name": "Ear L X"
+		},
+		{
+			"Id": "ParamEarLY",
+			"GroupId": "ParamGroup7",
+			"Name": "Ear L Y"
+		},
+		{
+			"Id": "ParamEarLWiggle",
+			"GroupId": "ParamGroup7",
+			"Name": "Ear L Wiggle"
+		},
+		{
+			"Id": "ParamEarRX",
+			"GroupId": "ParamGroup7",
+			"Name": "Ear R X"
+		},
+		{
+			"Id": "ParamEarRY",
+			"GroupId": "ParamGroup7",
+			"Name": "Ear R Y"
+		},
+		{
+			"Id": "ParamEarRWiggle",
+			"GroupId": "ParamGroup7",
+			"Name": "Ear R Wiggle"
+		},
+		{
+			"Id": "FolderHairBows",
+			"GroupId": "ParamGroup10",
+			"Name": "✖✖ Hair Bows ✖✖"
+		},
+		{
+			"Id": "ParamHairBowLX",
+			"GroupId": "ParamGroup10",
+			"Name": "Hair Bow L X"
+		},
+		{
+			"Id": "ParamHairBowLY",
+			"GroupId": "ParamGroup10",
+			"Name": "Hair Bow L Y"
+		},
+		{
+			"Id": "ParamHairBowLWiggle",
+			"GroupId": "ParamGroup10",
+			"Name": "Hair Bow L Wiggle"
+		},
+		{
+			"Id": "ParamHairBowRX",
+			"GroupId": "ParamGroup10",
+			"Name": "Hair Bow R X"
+		},
+		{
+			"Id": "ParamHairBowRY",
+			"GroupId": "ParamGroup10",
+			"Name": "Hair Bow R Y"
+		},
+		{
+			"Id": "ParamHairBowRWiggle",
+			"GroupId": "ParamGroup10",
+			"Name": "Hair Bow R Wiggle"
+		},
+		{
+			"Id": "FolderTiePhysics",
+			"GroupId": "ParamGroup10",
+			"Name": "✖✖ Tie Physics ✖✖"
+		},
+		{
+			"Id": "ParamTieBottomRotation",
+			"GroupId": "ParamGroup10",
+			"Name": "Tie Bottom Rotation"
+		},
+		{
+			"Id": "ParamTiePhysicsX",
+			"GroupId": "ParamGroup10",
+			"Name": "Tie Physics X"
+		},
+		{
+			"Id": "ParamTiePhysicsY",
+			"GroupId": "ParamGroup10",
+			"Name": "Tie Physics Y"
+		},
+		{
+			"Id": "ParamTiePhysicsWiggle",
+			"GroupId": "ParamGroup10",
+			"Name": "Tie Physics Wiggle"
+		},
+		{
+			"Id": "FolderJacketPhyiscs",
+			"GroupId": "ParamGroup10",
+			"Name": "✖✖ Jacket Physics ✖✖"
+		},
+		{
+			"Id": "ParamJacketLPhysics",
+			"GroupId": "ParamGroup10",
+			"Name": "Jacket L Physics"
+		},
+		{
+			"Id": "ParamJacketRPhysics",
+			"GroupId": "ParamGroup10",
+			"Name": "Jacket R Physics"
+		},
+		{
+			"Id": "FolderExpressionToggles",
+			"GroupId": "ParamGroup8",
+			"Name": "✖ Expression Toggles ✖"
+		},
+		{
+			"Id": "ParamCheekPuff",
+			"GroupId": "ParamGroup8",
+			"Name": "Cheek Puff"
+		},
+		{
+			"Id": "ParamToggleExclaim",
+			"GroupId": "ParamGroup8",
+			"Name": "Toggle - Exclaim"
+		},
+		{
+			"Id": "ParamToggleShadow",
+			"GroupId": "ParamGroup8",
+			"Name": "Toggle - Shadow"
+		},
+		{
+			"Id": "ParamToggleCheese",
+			"GroupId": "ParamGroup8",
+			"Name": "Toggle - Cheese"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "Head"
+		},
+		{
+			"Id": "ParamGroup5",
+			"GroupId": "",
+			"Name": "Body"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "Eyes"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "Eye Physics"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "Brows"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "Mouth"
+		},
+		{
+			"Id": "ParamGroup7",
+			"GroupId": "",
+			"Name": "Ears"
+		},
+		{
+			"Id": "ParamGroup10",
+			"GroupId": "",
+			"Name": "Clothing"
+		},
+		{
+			"Id": "ParamGroup8",
+			"GroupId": "",
+			"Name": "Expressions"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Expressions",
+			"Name": "Expressions"
+		},
+		{
+			"Id": "Head",
+			"Name": "Head"
+		},
+		{
+			"Id": "BodyFolder",
+			"Name": "BodyFolder"
+		},
+		{
+			"Id": "BowR",
+			"Name": "BowR"
+		},
+		{
+			"Id": "EarR",
+			"Name": "EarR"
+		},
+		{
+			"Id": "EyesR",
+			"Name": "EyesR"
+		},
+		{
+			"Id": "Mouth",
+			"Name": "Mouth"
+		},
+		{
+			"Id": "ArmR",
+			"Name": "ArmR"
+		},
+		{
+			"Id": "Body",
+			"Name": "Body"
+		},
+		{
+			"Id": "LegR",
+			"Name": "LegR"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAugAngleX",
+			"ParamAugAngleY"
+		],
+		[
+			"ParamHeadSquishX",
+			"ParamHeadSquishY"
+		],
+		[
+			"ParamAbsPhysicsX",
+			"ParamAbsPhysicsY"
+		],
+		[
+			"ParamEyeLOpen",
+			"ParamEyeLSmile"
+		],
+		[
+			"ParamEyeROpen",
+			"ParamEyeRSmile"
+		],
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"ParamEyeLShinesPhysicsX",
+			"ParamEyeLShinesPhysicsY"
+		],
+		[
+			"ParamEyeLIrisPhysicsX",
+			"ParamEyeLIrisPhysicsY"
+		],
+		[
+			"ParamEyeRShinesPhysicsX",
+			"ParamEyeRShinesPhysicsY"
+		],
+		[
+			"ParamEyeRIrisPhysicsX",
+			"ParamEyeRIrisPhysicsY"
+		],
+		[
+			"ParamBrowLX",
+			"ParamBrowLY"
+		],
+		[
+			"ParamBrowLPhysicxX",
+			"ParamBrowLPhysicxY"
+		],
+		[
+			"ParamBrowRX",
+			"ParamBrowRY"
+		],
+		[
+			"ParamBrowRPhysicxX",
+			"ParamBrowRPhysicxY"
+		],
+		[
+			"ParamMouthForm",
+			"ParamMouthOpenY"
+		],
+		[
+			"ParamTiePhysicsX",
+			"ParamTiePhysicsY"
+		]
+	]
+}

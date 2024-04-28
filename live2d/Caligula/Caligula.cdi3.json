@@ -1,0 +1,350 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左目　開閉"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "左目　笑顔"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右目　開閉"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右目　笑顔"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "目玉 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "目玉 Y"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "右眉　変形"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "口　変形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "口　開閉"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "体の回転　X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "体の回転　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "体の回転　Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "ケープ胸揺れ"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "乳揺れY"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "スカート揺れX"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "スカート揺れY"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "触角揺れ"
+		},
+		{
+			"Id": "ParamHairFront2",
+			"GroupId": "",
+			"Name": "枝髪右先"
+		},
+		{
+			"Id": "ParamHairFront3",
+			"GroupId": "",
+			"Name": "枝髪右中"
+		},
+		{
+			"Id": "ParamHairFront4",
+			"GroupId": "",
+			"Name": "枝髪左先"
+		},
+		{
+			"Id": "ParamHairFront5",
+			"GroupId": "",
+			"Name": "枝髪左中"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "髪横左外"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "髪横右外"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "髪横左内"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "髪横右内"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "前髪左"
+		},
+		{
+			"Id": "ParamHairSide2",
+			"GroupId": "",
+			"Name": "前髪右"
+		},
+		{
+			"Id": "ParamHairBack2",
+			"GroupId": "",
+			"Name": "後ろ髪左"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "後ろ髪右"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "後ろ髪X"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "",
+			"Name": "後ろ髪X2"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "ケープ裏"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "ケープ裏中"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "ケープ脱ぎ"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "眼鏡外し"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part5",
+			"Name": "顎裏.png"
+		},
+		{
+			"Id": "Part",
+			"Name": "触角"
+		},
+		{
+			"Id": "Part2",
+			"Name": "前髪"
+		},
+		{
+			"Id": "Part3",
+			"Name": "眼鏡"
+		},
+		{
+			"Id": "Part4",
+			"Name": "眉"
+		},
+		{
+			"Id": "Part7",
+			"Name": "鼻"
+		},
+		{
+			"Id": "Part31",
+			"Name": "右目"
+		},
+		{
+			"Id": "Part6",
+			"Name": "左目"
+		},
+		{
+			"Id": "Part8",
+			"Name": "口"
+		},
+		{
+			"Id": "Part9",
+			"Name": "頬"
+		},
+		{
+			"Id": "Part10",
+			"Name": "顔面"
+		},
+		{
+			"Id": "Part11",
+			"Name": "耳"
+		},
+		{
+			"Id": "Part12",
+			"Name": "ケープリボン"
+		},
+		{
+			"Id": "Part13",
+			"Name": "ケープ"
+		},
+		{
+			"Id": "Part14",
+			"Name": "コルセット"
+		},
+		{
+			"Id": "Part15",
+			"Name": "胸部"
+		},
+		{
+			"Id": "Part16",
+			"Name": "右腕"
+		},
+		{
+			"Id": "Part17",
+			"Name": "左腕"
+		},
+		{
+			"Id": "Part18",
+			"Name": "首"
+		},
+		{
+			"Id": "Part19",
+			"Name": "スカート"
+		},
+		{
+			"Id": "Part20",
+			"Name": "左ブーツ"
+		},
+		{
+			"Id": "Part21",
+			"Name": "左脚"
+		},
+		{
+			"Id": "Part22",
+			"Name": "ブーツ裏左"
+		},
+		{
+			"Id": "Part23",
+			"Name": "右ブーツ"
+		},
+		{
+			"Id": "Part24",
+			"Name": "右脚"
+		},
+		{
+			"Id": "Part25",
+			"Name": "ブーツ裏右"
+		},
+		{
+			"Id": "Part26",
+			"Name": "スカート裏"
+		},
+		{
+			"Id": "Part27",
+			"Name": "シャツ襟裏"
+		},
+		{
+			"Id": "Part28",
+			"Name": "ケープ裏"
+		},
+		{
+			"Id": "Part29",
+			"Name": "後ろ髪"
+		},
+		{
+			"Id": "Part30",
+			"Name": "翅"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAngleX",
+			"ParamAngleY"
+		],
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"ParamMouthForm",
+			"ParamMouthOpenY"
+		],
+		[
+			"ParamBodyAngleX",
+			"ParamBodyAngleY"
+		]
+	]
+}

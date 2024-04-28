@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "labrea.moc3",
+		"Textures": [
+			"labrea.4096/texture_00.png"
+		],
+		"Physics": "labrea.physics3.json",
+		"DisplayInfo": "labrea.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

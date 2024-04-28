@@ -1,0 +1,94 @@
+{
+    "FileMetadata": {
+        "LastSavedVTubeStudioVersion": "1.23.5",
+        "LastSavedPlatform": "Steam",
+        "LastSavedDateUTC": "Tuesday, 07 February 2023, 22:28:54",
+        "LastSavedDateLocalTime": "Tuesday, 07 February 2023, 22:28:54",
+        "LastSavedDateUnixMillisecondTimestamp": "1675808934315"
+    },
+    "SceneName": "",
+    "SceneGroupName": "",
+    "SceneModel": "",
+    "SceneID": "",
+    "Items": [
+        {
+            "ItemName": "beverage_Bepis (@7MDigital)",
+            "ItemObjectInScene": {
+                "m_FileID": -224200,
+                "m_PathID": 0
+            },
+            "ItemFileName": "beverage_Bepis (@7MDigital).png",
+            "ItemInstanceUUID": "4cb8d4c87e5b42c2b0ff25bdcf8eb429",
+            "Selected": true,
+            "TrackingModel": true,
+            "IsAnimated": false,
+            "IsVideo": false,
+            "IsModel": false,
+            "IsCensored": false,
+            "IsFlipped": false,
+            "IsLocked": true,
+            "Smoothing": 0.0,
+            "Order": 3,
+            "FPS": 0.0,
+            "IsPinned": true,
+            "PinnedTo": "ArtMesh2",
+            "PinnedModel_Live2D": "dog",
+            "PinnedModel_VTS": "dog",
+            "PinnedModel_InternalID": "c4da1d762a034dbd99aff7e6cfe5e389",
+            "PinnedVertexIDs": "9 10 8 11 7 12",
+            "PinnedVertexPositions": [
+                {
+                    "x": 0.046480726450681689,
+                    "y": -0.22634679079055787,
+                    "z": 0.0
+                },
+                {
+                    "x": 0.034309111535549167,
+                    "y": -0.23971712589263917,
+                    "z": 0.0
+                },
+                {
+                    "x": 0.05424513667821884,
+                    "y": -0.21433018147945405,
+                    "z": 0.0
+                },
+                {
+                    "x": 0.022470902651548387,
+                    "y": -0.24538224935531617,
+                    "z": 0.0
+                },
+                {
+                    "x": 0.05622490495443344,
+                    "y": -0.20206397771835328,
+                    "z": 0.0
+                },
+                {
+                    "x": 0.010763946920633316,
+                    "y": -0.24796587228775025,
+                    "z": 0.0
+                }
+            ],
+            "PinnedVertexCenterOffset": {
+                "x": -0.019508736208081247,
+                "y": 0.021971121430397035,
+                "z": -0.01149425283074379
+            },
+            "Size": 0.016744939610362054,
+            "ModelScaleMultiplier": 0.006449917796999216,
+            "Rotation": 0.0,
+            "Position": {
+                "x": -0.031166957691311837,
+                "y": -0.13008886575698853,
+                "z": 0.0
+            },
+            "Group": "",
+            "Scene": "",
+            "AssetType": 1,
+            "FromWorkshop": false,
+            "FromHotkey": false,
+            "FromAPI": false,
+            "FadeTime": 0.5,
+            "Plugin": ""
+        }
+    ]
+}

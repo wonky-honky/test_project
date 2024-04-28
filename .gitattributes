@@ -2,3 +2,4 @@
 * text=auto eol=lf
 3d/scene/glimmingehus_borg_och_vallgrav/scene.bin filter=lfs diff=lfs merge=lfs -text
 apartment.occ filter=lfs diff=lfs merge=lfs -text
+live2d/Caligula/Caligula.8192/texture_00.png filter=lfs diff=lfs merge=lfs -text

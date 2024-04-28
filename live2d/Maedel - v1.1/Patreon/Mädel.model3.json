@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Mädel.moc3",
+		"Textures": [
+			"Mädel.4096/texture_00.png"
+		],
+		"Physics": "Mädel.physics3.json",
+		"DisplayInfo": "Mädel.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

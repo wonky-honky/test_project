@@ -1,0 +1,146 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "office_m.moc3",
+		"Textures": [
+			"office_m.2048/texture_00.png",
+			"office_m.2048/texture_01.png",
+			"office_m.2048/texture_02.png",
+			"office_m.2048/texture_03.png"
+		],
+		"Physics": "office_m.physics3.json",
+		"DisplayInfo": "office_m.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "exp_00",
+				"File": "expressions/exp_00.exp3.json"
+			},
+			{
+				"Name": "exp_01",
+				"File": "expressions/exp_01.exp3.json"
+			},
+			{
+				"Name": "exp_02",
+				"File": "expressions/exp_02.exp3.json"
+			},
+			{
+				"Name": "exp_03",
+				"File": "expressions/exp_03.exp3.json"
+			},
+			{
+				"Name": "exp_04",
+				"File": "expressions/exp_04.exp3.json"
+			},
+			{
+				"Name": "exp_05",
+				"File": "expressions/exp_05.exp3.json"
+			},
+			{
+				"Name": "exp_06",
+				"File": "expressions/exp_06.exp3.json"
+			},
+			{
+				"Name": "exp_07",
+				"File": "expressions/exp_07.exp3.json"
+			},
+			{
+				"Name": "exp_08",
+				"File": "expressions/exp_08.exp3.json"
+			},
+			{
+				"Name": "exp_09",
+				"File": "expressions/exp_09.exp3.json"
+			},
+			{
+				"Name": "exp_10",
+				"File": "expressions/exp_10.exp3.json"
+			},
+			{
+				"Name": "exp_11",
+				"File": "expressions/exp_11.exp3.json"
+			},
+			{
+				"Name": "exp_12",
+				"File": "expressions/exp_12.exp3.json"
+			},
+			{
+				"Name": "exp_13",
+				"File": "expressions/exp_13.exp3.json"
+			},
+			{
+				"Name": "exp_14",
+				"File": "expressions/exp_14.exp3.json"
+			},
+			{
+				"Name": "exp_15",
+				"File": "expressions/exp_15.exp3.json"
+			}
+		],
+		"Motions": {
+			"": [
+				{
+					"File": "mtn/M01.motion3.json"
+				},
+				{
+					"File": "mtn/M02.motion3.json"
+				},
+				{
+					"File": "mtn/M03.motion3.json"
+				},
+				{
+					"File": "mtn/M04.motion3.json"
+				},
+				{
+					"File": "mtn/M05.motion3.json"
+				},
+				{
+					"File": "mtn/M06.motion3.json"
+				},
+				{
+					"File": "mtn/M07.motion3.json"
+				},
+				{
+					"File": "mtn/M08.motion3.json"
+				},
+				{
+					"File": "mtn/M09.motion3.json"
+				}
+			],
+			"Idle": [
+				{
+					"File": "mtn/W01.motion3.json"
+				},
+				{
+					"File": "mtn/W02.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		}
+	],
+	"HitAreas": [
+		{
+			"Id": "HitArea_Head",
+			"Name": ""
+		},
+		{
+			"Id": "HitArea_Body",
+			"Name": ""
+		}
+	]
+}

@@ -1,0 +1,129 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "office_f.moc3",
+		"Textures": [
+			"office_f.2048/texture_00.png",
+			"office_f.2048/texture_01.png"
+		],
+		"Physics": "office_f.physics3.json",
+		"DisplayInfo": "office_f.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "exp_00",
+				"File": "expressions/exp_00.exp3.json"
+			},
+			{
+				"Name": "exp_01",
+				"File": "expressions/exp_01.exp3.json"
+			},
+			{
+				"Name": "exp_02",
+				"File": "expressions/exp_02.exp3.json"
+			},
+			{
+				"Name": "exp_03",
+				"File": "expressions/exp_03.exp3.json"
+			},
+			{
+				"Name": "exp_04",
+				"File": "expressions/exp_04.exp3.json"
+			},
+			{
+				"Name": "exp_05",
+				"File": "expressions/exp_05.exp3.json"
+			},
+			{
+				"Name": "exp_06",
+				"File": "expressions/exp_06.exp3.json"
+			},
+			{
+				"Name": "exp_07",
+				"File": "expressions/exp_07.exp3.json"
+			},
+			{
+				"Name": "exp_08",
+				"File": "expressions/exp_08.exp3.json"
+			},
+			{
+				"Name": "exp_09",
+				"File": "expressions/exp_09.exp3.json"
+			},
+			{
+				"Name": "exp_10",
+				"File": "expressions/exp_10.exp3.json"
+			},
+			{
+				"Name": "exp_11",
+				"File": "expressions/exp_11.exp3.json"
+			}
+		],
+		"Motions": {
+			"": [
+				{
+					"File": "mtn/M01.motion3.json"
+				},
+				{
+					"File": "mtn/M02.motion3.json"
+				},
+				{
+					"File": "mtn/M03.motion3.json"
+				},
+				{
+					"File": "mtn/M04.motion3.json"
+				},
+				{
+					"File": "mtn/M05.motion3.json"
+				},
+				{
+					"File": "mtn/M06.motion3.json"
+				},
+				{
+					"File": "mtn/M07.motion3.json"
+				},
+				{
+					"File": "mtn/M08.motion3.json"
+				},
+				{
+					"File": "mtn/M09.motion3.json"
+				},
+				{
+					"File": "mtn/M10.motion3.json"
+				},
+				{
+					"File": "mtn/W01.motion3.json"
+				},
+				{
+					"File": "mtn/W02.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		}
+	],
+	"HitAreas": [
+		{
+			"Id": "HitArea_Body",
+			"Name": ""
+		},
+		{
+			"Id": "HitArea_Head",
+			"Name": ""
+		}
+	]
+}
