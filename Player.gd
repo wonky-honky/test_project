@@ -17,6 +17,7 @@ const JUMP_VELOCITY = 50.0
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sensitivity = 0.01
 # https://github.com/godotengine/godot/issues/29727 amazing
+
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -27,15 +28,15 @@ func _unhandled_input(event):
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			get_viewport().set_input_as_handled()
-# https://github.com/godotengine/godot/issues/29727 fucking amazing
-		else:
-			var thecamera = get_viewport().get_camera_3d();
-			var space = get_world_3d().direct_space_state
-			var query = PhysicsRayQueryParameters3D.create(thecamera.global_position,
-            thecamera.global_position - thecamera.global_transform.basis.z * 100)
-			var collision = space.intersect_ray(query)
-			if collision and collision.collider.has_method("raycast_input"):
-				collision.collider.raycast_input(event)
+## https://github.com/godotengine/godot/issues/29727 fucking amazing
+#		else:
+#			var thecamera = get_viewport().get_camera_3d();
+#			var space = get_world_3d().direct_space_state
+ #			var query = PhysicsRayQueryParameters3D.create(thecamera.global_position,
+  #          thecamera.global_position - thecamera.global_transform.basis.z * 100)
+#			var collision = space.intersect_ray(query)
+#			if collision and collision.collider.has_method("raycast_input"):
+#				collision.collider.raycast_input(event)
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var thecamera = get_viewport().get_camera_3d();
 		rotate_y(-event.relative.x * mouse_sensitivity)
