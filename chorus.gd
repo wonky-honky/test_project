@@ -26,32 +26,36 @@ func pause(timed = false,seconds = 3, cleanup_args = [],cleanup: Callable = func
 class Choice:
 	var label;
 	var choice_callback_args: Array;
-	var choice_callback: Callable;
+	var choice_callback: Callable = func(_args):;
 	
 
 func choice(question, choices: Array = [], cancellable = true):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
 	pause();
-	var cont: HBoxContainer = HBoxContainer.new()
+	var cont: GridContainer = GridContainer.new()
+	cont.columns = 2;
 	var q;
-#	var dogshit_labels: Label = Label.new();
-	if question is RichTextLabel:
-		print(question.text);
-		q = question;
-		cont.add_child(q);
+# RichTextLabel in a container with other things is fundamentally deeply and profoundly fucked in ways beyond a human being's understanding. Do you want 1px width ? Should 1px width even be possible ? Not according to the documentation! The fucking buttons and switches and options might have names and descriptions that claim to explain what they do, but they don't. It's a fucking random number generator for mangling the label itself and everything else that is unfortunate enough to be situated in the same container. It 100% honest to god takes less time to develop your own fucking scalable/proportional grid/flow/whatever UI with formatting and custom effects in fucking C++ or even rust than it does trying to wrangle this incomprehensible piece of actual dog shit to do anything resembling what you intended. KEEP OUT and FUCK this thing.
+# it probably has something to do with the implicit vscroll because that fucks everything up in similar spectacular ways on its own
+#	if question is RichTextLabel:
+#		print(question.text);
+#		q = question;
+#		cont.add_child(q);
+#	else:
+	q = Label.new();
+	q.vertical_alignment = VERTICAL_ALIGNMENT_CENTER;
+	q.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER;
+	q.autowrap_mode = TextServer.AUTOWRAP_WORD;
+	q.size_flags_horizontal = Control.SIZE_EXPAND_FILL;
+	q.size_flags_vertical = Control.SIZE_EXPAND_FILL;
+	
+	if question is String:
+		print("adding string: " + question)
+		q.text = question;
 	else:
-		q = Label.new();
-		cont.add_child(q);
-		if question is String:
-			print("adding string: " + question)
-			q.text = question;
-		else:
-			print("adding whatever this is as string: " + str(question))
-			q.text = str(question)
-	cont.size_flags_horizontal = cont.SIZE_EXPAND_FILL;
-	cont.size_flags_vertical = cont.SIZE_EXPAND_FILL;
-	cont.set_anchors_preset(cont.PRESET_FULL_RECT)
-
+		print("adding whatever this is as string: " + str(question))
+		q.text = str(question)
+	cont.add_child(q);
 	cont.tree_exited.connect(func():
 		mouse_filter = Control.MOUSE_FILTER_IGNORE;
 		var t = get_tree();
@@ -59,6 +63,8 @@ func choice(question, choices: Array = [], cancellable = true):
 			t.paused = false;)
 	for c: Choice in choices:
 		var butan: Button = Button.new();
+		butan.autowrap_mode = TextServer.AUTOWRAP_WORD;
+		butan.size_flags_horizontal = Control.SIZE_EXPAND_FILL;
 		butan.text = c.label;
 		butan.button_up.connect(func():
 			c.choice_callback.call(c.choice_callback_args);
@@ -66,6 +72,8 @@ func choice(question, choices: Array = [], cancellable = true):
 		cont.add_child(butan)
 	if cancellable:
 		var cancel_b: Button = Button.new();
+		cancel_b.autowrap_mode = TextServer.AUTOWRAP_WORD;
+		cancel_b.size_flags_horizontal = Control.SIZE_EXPAND_FILL;
 		cancel_b.text = "Do nothing.";
 		cancel_b.button_up.connect(func(): cont.queue_free())
 		cont.add_child(cancel_b);
@@ -87,9 +95,33 @@ func _ready() -> void:
 	set_process_mode(PROCESS_MODE_WHEN_PAUSED)
 	timer = Timer.new();
 	add_child(timer);
-	splash("testomatic");
+	testo();
+#	splash("testomatic");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 		
+func testo():
+	var question = "Very long text blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog";
+	var butan1 = Choice.new();
+	var butan2 = Choice.new();
+	butan1.label = "Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog
+	Very long text blog blog blog";
+	butan2.label = "Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog Very long text unbroken blog blog blog ";
+	choice(question, [butan1,butan2],true);
