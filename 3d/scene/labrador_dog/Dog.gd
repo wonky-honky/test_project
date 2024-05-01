@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	print("actually caught collision in engine without manual raycast")
+#	print("actually caught collision in engine without manual raycast")
 	raycast_input(event)
 
 func raycast_input(event):

@@ -2,70 +2,80 @@ extends AspectRatioContainer
 
 var timer: Timer;
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	set_process_mode(PROCESS_MODE_WHEN_PAUSED)
-#	z_index = 1;
-#	stretch_mode = AspectRatioContainer.STRETCH_COVER;
-	set_anchors_preset(PRESET_FULL_RECT);
-	offset_bottom = 0;
-	offset_left = 0;
-	offset_right = 0;
-	offset_top = 0;
-	size_flags_horizontal = Control.SIZE_EXPAND_FILL;
-	size_flags_vertical = Control.SIZE_EXPAND_FILL;
-	mouse_filter = Control.MOUSE_FILTER_STOP;
-	timer = Timer.new();
-	get_tree().paused = true;
-	
-#	gui_input.connect(eat_input);
-#	set_process_input(true);
-#	set_process_unhandled_input(true);
-	add_child(timer);
-#	var testo: PanelContainer = PanelContainer.new();
-#	var testo: AspectRatioContainer = AspectRatioContainer.new();
-#	add_child(testo);
-#	testo.set_anchors_preset(Control.PRESET_BOTTOM_WIDE);
-#	testo.mouse_filter = Control.MOUSE_FILTER_STOP;
-	var texto: RichTextLabel = RichTextLabel.new();
-#	texto.fit_content = true;
-#	texto.set_anchors_preset(PRESET_FULL_RECT);
-#	texto.offset_bottom = 0;
-#	texto.offset_left = 0;
-#	texto.offset_right = 0;
-#	texto.offset_top = 0;
-#	texto.set_anchor(SIDE_BOTTOM,0.4)
-#	texto.set_anchor(SIDE_RIGHT,0.4)
-#	texto.set_anchor(SIDE_LEFT,0.4)
-	
-#	texto.size_flags_horizontal = Control.SIZE_EXPAND_FILL;
-#	texto.size_flags_vertical = Control.SIZE_EXPAND_FILL;
-	texto.bbcode_enabled = true;
-	texto.push_font_size(150);
-	texto.append_text("TEXTO");
-	texto.pop();
+func fit_screen(c: Control):
+	c.set_anchors_preset(PRESET_FULL_RECT);
+	c.offset_bottom = 0;
+	c.offset_left = 0;
+	c.offset_right = 0;
+	c.offset_top = 0;
+	c.size_flags_horizontal = Control.SIZE_EXPAND_FILL;
+	c.size_flags_vertical = Control.SIZE_EXPAND_FILL;
 
-	add_child(texto);
-#	testo.add_child(texto);
-	timer.one_shot = true;
-	timer.start(10);
+func pause(timed = false,seconds = 3, cleanup_args = [],cleanup: Callable = func(_args):) -> void:
+	mouse_filter = Control.MOUSE_FILTER_STOP;
+	get_tree().paused = true;
+	if timed:
+		timer.one_shot = true;
+		timer.start(seconds);
 	timer.timeout.connect(func():
-#		testo.queue_free();
-		texto.queue_free();
+		cleanup.call(cleanup_args);
 		mouse_filter = Control.MOUSE_FILTER_IGNORE;
 		get_tree().paused = false;
-#		gui_input.disconnect(eat_input);
-#		set_process_input(false);
-#		testo.mouse_filter = Control.MOUSE_FILTER_IGNORE;
 		);
 
-# hmm this doesnt work
-#func eat_input(event: InputEvent) -> void:
-#	accept_event()
-#func _input(event: InputEvent) -> void:
-#	eat_input(event)
-#func _unhandled_input(event: InputEvent) -> void:
-#	eat_input(event)
+class Choice:
+	var label;
+	var choice_callback_args;
+	func choice_callback(_args):
+		pass
+	
+
+func choice(question, choices: Array = [], cancellable = true):
+	pause();
+	var q: RichTextLabel;
+	if question is RichTextLabel:
+		q = question;
+	else:
+		q = RichTextLabel.new();
+		q.append_text(str(question));
+	var cont: HBoxContainer = HBoxContainer.new()
+	cont.size_flags_horizontal = cont.SIZE_EXPAND_FILL;
+	cont.size_flags_vertical = cont.SIZE_EXPAND_FILL;
+	cont.set_anchors_preset(cont.PRESET_FULL_RECT)
+	cont.add_child(q);
+	cont.tree_exited.connect(func():
+		mouse_filter = Control.MOUSE_FILTER_IGNORE;
+		get_tree().paused = false;)
+	for c: Choice in choices:
+		var butan: Button = Button.new();
+		butan.text = c.label;
+		butan.button_up.connect(func():
+			c.choice_callback(c.choice_callback_args);
+			cont.queue_free();)
+		cont.add_child(butan)
+	if cancellable:
+		var cancel_b: Button = Button.new();
+		cancel_b.text = "Do nothing.";
+		cancel_b.button_up.connect(func(): cont.queue_free())
+	
+func splash(text: String):
+	var texto: RichTextLabel = RichTextLabel.new();
+	fit_screen(texto);
+	texto.bbcode_enabled = true;
+	texto.push_font_size(150);
+	texto.append_text(text);
+	texto.pop();
+	add_child(texto);
+	pause(true,3,[texto],func(args): args[0].queue_free());
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	fit_screen(self);
+	set_process_mode(PROCESS_MODE_WHEN_PAUSED)
+	timer = Timer.new();
+	add_child(timer);
+	splash("testomatic");
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

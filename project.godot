@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Tooting="*res://tooting.gd"
 GlobalState="*res://global_state.gd"
 Chorus="*res://chorus.gd"
+Hud="*res://hud.gd"
 
 [debug]
 
