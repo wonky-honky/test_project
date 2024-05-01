@@ -25,38 +25,51 @@ func pause(timed = false,seconds = 3, cleanup_args = [],cleanup: Callable = func
 
 class Choice:
 	var label;
-	var choice_callback_args;
-	func choice_callback(_args):
-		pass
+	var choice_callback_args: Array;
+	var choice_callback: Callable;
 	
 
 func choice(question, choices: Array = [], cancellable = true):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
 	pause();
-	var q: RichTextLabel;
-	if question is RichTextLabel:
-		q = question;
-	else:
-		q = RichTextLabel.new();
-		q.append_text(str(question));
 	var cont: HBoxContainer = HBoxContainer.new()
+	var q;
+#	var dogshit_labels: Label = Label.new();
+	if question is RichTextLabel:
+		print(question.text);
+		q = question;
+		cont.add_child(q);
+	else:
+		q = Label.new();
+		cont.add_child(q);
+		if question is String:
+			print("adding string: " + question)
+			q.text = question;
+		else:
+			print("adding whatever this is as string: " + str(question))
+			q.text = str(question)
 	cont.size_flags_horizontal = cont.SIZE_EXPAND_FILL;
 	cont.size_flags_vertical = cont.SIZE_EXPAND_FILL;
 	cont.set_anchors_preset(cont.PRESET_FULL_RECT)
-	cont.add_child(q);
+
 	cont.tree_exited.connect(func():
 		mouse_filter = Control.MOUSE_FILTER_IGNORE;
-		get_tree().paused = false;)
+		var t = get_tree();
+		if t:
+			t.paused = false;)
 	for c: Choice in choices:
 		var butan: Button = Button.new();
 		butan.text = c.label;
 		butan.button_up.connect(func():
-			c.choice_callback(c.choice_callback_args);
+			c.choice_callback.call(c.choice_callback_args);
 			cont.queue_free();)
 		cont.add_child(butan)
 	if cancellable:
 		var cancel_b: Button = Button.new();
 		cancel_b.text = "Do nothing.";
 		cancel_b.button_up.connect(func(): cont.queue_free())
+		cont.add_child(cancel_b);
+	add_child(cont);
 	
 func splash(text: String):
 	var texto: RichTextLabel = RichTextLabel.new();
