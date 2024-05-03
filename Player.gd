@@ -18,6 +18,30 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sensitivity = 0.01
 # https://github.com/godotengine/godot/issues/29727 amazing
 
+func _ready():
+	var p = self;
+	p.set_physics_process(false);
+	p.set_process_input(false);
+	p.set_process_unhandled_input(false);
+	var start_cam: Camera3D = get_node("/root/Node3D/TheBedroom/WakeupCamera");
+	var player_cam: Camera3D = p.find_child("Camera3D");
+	start_cam.make_current();
+	var t: Timer = Timer.new();
+	add_child(t);
+	t.one_shot = true;
+	t.timeout.connect(func():
+		Fade.fade_out(1);
+		Fade.fade_in(5).finished.connect(func():
+			player_cam.make_current();
+			p.set_physics_process(true);
+			p.set_process_input(true);
+			p.set_process_unhandled_input(true);
+			t.queue_free();
+			);
+		)
+	t.start(0.017);
+
+
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

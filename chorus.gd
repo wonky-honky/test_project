@@ -95,7 +95,7 @@ func _ready() -> void:
 	set_process_mode(PROCESS_MODE_WHEN_PAUSED)
 	timer = Timer.new();
 	add_child(timer);
-	testo();
+#	testo();
 #	splash("testomatic");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
