@@ -9,7 +9,7 @@ extends CharacterBody3D
 #		if camera_anglev+changev>-50 and camera_anglev+changev<50:
 #			camera_anglev+=changev
 #			rotate_x(deg_to_rad(changev))
-var money = 90;
+
 const SPEED = 50.0
 const JUMP_VELOCITY = 50.0
 
@@ -47,7 +47,7 @@ func _unhandled_input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_viewport().set_input_as_handled()
 # https://github.com/godotengine/godot/issues/29727 amazing
-	if event.is_action_pressed("click"):
+	elif event.is_action_pressed("click"):
 #		print("still eating the fucking mouse click")
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -61,20 +61,24 @@ func _unhandled_input(event):
 #			var collision = space.intersect_ray(query)
 #			if collision and collision.collider.has_method("raycast_input"):
 #				collision.collider.raycast_input(event)
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	elif event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var thecamera = get_viewport().get_camera_3d();
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		
 		thecamera.rotate_x(-event.relative.y * mouse_sensitivity)
 		thecamera.rotation.x = clampf(thecamera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-
+	elif event.is_action_released("suicide"):
+		GlobalState.points += 10;
+		Chorus.quit_game("You take a moment to reflect on yourself, on the state of the world and on your position and role in it. Something smells like it's burning. You think you have just gained one thousand points. An euphoric feeling envelops you. Your vision fades.");
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		if velocity.y < - 100.0 :
-			print("fall damage");
+			Fade.fade_out(1,Color.RED);
+			Fade.fade_in(1,Color.RED);
+			Chorus.game_over("You have fallen to your death.");
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

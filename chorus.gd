@@ -25,7 +25,7 @@ func pause(timed = false,seconds = 3, cleanup_args = [],cleanup: Callable = func
 
 class Choice:
 	var label;
-	var choice_callback_args: Array;
+	var choice_callback_args: Array = [];
 	var choice_callback: Callable = func(_args):;
 	
 
@@ -78,6 +78,20 @@ func choice(question, choices: Array = [], cancellable = true):
 		cancel_b.button_up.connect(func(): cont.queue_free())
 		cont.add_child(cancel_b);
 	add_child(cont);
+
+func game_over(reason: String):	
+	var gs: GlobalState = get_node("/root/GlobalState");
+	var full_reason = reason + "\nYou are worth " + str(gs.score + gs.money) + " out of " + str(gs.total_score()) + " shillings total";
+	var restart = Choice.new();
+	var quit = Choice.new();
+	quit.label = "Quit.";
+	restart.label = "Restart";
+	restart.choice_callback = func(_args):
+		get_tree().reload_current_scene();
+	quit.choice_callback = func(_args):
+		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST);
+		get_tree().quit();
+	choice(full_reason,[quit,restart],false);
 	
 func splash(text: String):
 	var texto: RichTextLabel = RichTextLabel.new();
