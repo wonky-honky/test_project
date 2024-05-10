@@ -9,11 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func raycast_input(event):
-	print("called input event on door");
-	if event.is_action("click"):
-		print(event)
-		if event.is_action_pressed("click"):
-			print("clicked door out");
-

@@ -68,8 +68,9 @@ func _unhandled_input(event):
 		thecamera.rotate_x(-event.relative.y * mouse_sensitivity)
 		thecamera.rotation.x = clampf(thecamera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 	elif event.is_action_released("suicide"):
-		GlobalState.points += 10;
-		Chorus.quit_game("You take a moment to reflect on yourself, on the state of the world and on your position and role in it. Something smells like it's burning. You think you have just gained one thousand points. An euphoric feeling envelops you. Your vision fades.");
+		var gs = get_node("/root/GlobalState");
+		gs.score += 10;
+		Chorus.game_over("You take a moment to reflect on yourself, on the state of the world and on your position and role in it. Something smells like it's burning. You think you have just gained one thousand points. An euphoric feeling envelops you. Your vision fades.");
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

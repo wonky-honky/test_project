@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=109 format=4 uid="uid://btin64ilyqmd0"]
 
 [ext_resource type="Script" path="res://apartment.gd" id="1_3f5pa"]
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
@@ -15,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bcmij5bpje6w7" path="res://3d/scene/glimmingehus_borg_och_vallgrav/scene.gltf" id="10_fkrys"]
 [ext_resource type="PackedScene" uid="uid://baxpcqii0eoyo" path="res://3d/scene/bus_stop/scene.gltf" id="11_b6yfi"]
 [ext_resource type="PackedScene" uid="uid://d041c7d4l13al" path="res://3d/scene/garbage_patch/scene.gltf" id="12_w2cwk"]
+[ext_resource type="Script" path="res://ManholeTop.gd" id="13_o5nfj"]
 [ext_resource type="PackedScene" uid="uid://cmwq0226wy2mj" path="res://3d/scene/hedgehog_tank_trap_and_barbed_wire_obstacles/scene.gltf" id="13_v5eua"]
+[ext_resource type="Script" path="res://ManholeBottom.gd" id="14_1rs28"]
 [ext_resource type="PackedScene" uid="uid://tfoxgv2vlgx1" path="res://3d/scene/bus_ussr_-_low/scene.gltf" id="14_qnbtx"]
 [ext_resource type="PackedScene" uid="uid://bqxbg0j5x81i3" path="res://3d/scene/vending_machine/scene.gltf" id="15_b4d3e"]
 [ext_resource type="PackedScene" uid="uid://wao2ntttau" path="res://3d/scene/vending_machine_-_blue_cow/scene.gltf" id="16_ow8qe"]
@@ -1164,7 +1166,7 @@ shape = SubResource("BoxShape3D_fhntp")
 [node name="door_typeA_001" parent="TheBedroom" index="12"]
 mesh = SubResource("ArrayMesh_deeee")
 
-[node name="CollisionShape3D" parent="TheBedroom/door_typeA_001/StaticBody3D" index="0"]
+[node name="StaticBody3D" parent="TheBedroom/door_typeA_001" index="0"]
 script = ExtResource("9_aw2h3")
 
 [node name="WakeupCamera" type="Camera3D" parent="TheBedroom"]
@@ -1389,17 +1391,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.45058e-09, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.918663, -0.034764, 3.26138)
 shape = SubResource("BoxShape3D_tgedp")
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("9_b3ype")]
+[node name="ManholeTop" parent="." instance=ExtResource("9_b3ype")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.16027, 22.189, 41.1948)
 
-[node name="Sketchfab_model" parent="Sketchfab_Scene2" index="0"]
+[node name="Sketchfab_model" parent="ManholeTop" index="0"]
 transform = Transform3D(0.00438554, 0, 0, 0, -1.91698e-10, 0.00438554, 0, -0.00438554, -1.91698e-10, 0, -0.121107, 0)
 
-[node name="Sketchfab_Scene3" parent="." instance=ExtResource("9_b3ype")]
+[node name="StaticBody3D" parent="ManholeTop/Sketchfab_model/dvojpoklop_FBX/RootNode/dvojpoklop/dvojpoklop_dvojpoklop_DiffuseMap_0" index="0"]
+script = ExtResource("13_o5nfj")
+
+[node name="ManholeBottom" parent="." instance=ExtResource("9_b3ype")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.16027, 21.3412, 41.1948)
 
-[node name="Sketchfab_model" parent="Sketchfab_Scene3" index="0"]
+[node name="Sketchfab_model" parent="ManholeBottom" index="0"]
 transform = Transform3D(0.00438554, 0, 0, 0, -1.91698e-10, 0.00438554, 0, -0.00438554, -1.91698e-10, 0, -0.121107, 0)
+
+[node name="StaticBody3D" parent="ManholeBottom/Sketchfab_model/dvojpoklop_FBX/RootNode/dvojpoklop/dvojpoklop_dvojpoklop_DiffuseMap_0" index="0"]
+script = ExtResource("14_1rs28")
 
 [node name="GargamelsCastle" parent="." instance=ExtResource("10_fkrys")]
 transform = Transform3D(4.88272, 0, 1.07657, 0, 5, 0, -1.07657, 0, 4.88272, -27.332, -28.8403, -425.151)
@@ -1675,8 +1683,8 @@ skeleton = NodePath("")
 [editable path="Bedroom6"]
 [editable path="Bedroom7"]
 [editable path="Bedroom8"]
-[editable path="Sketchfab_Scene2"]
-[editable path="Sketchfab_Scene3"]
+[editable path="ManholeTop"]
+[editable path="ManholeBottom"]
 [editable path="GargamelsCastle"]
 [editable path="Sketchfab_Scene5"]
 [editable path="Sketchfab_Scene10"]
