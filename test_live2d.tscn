@@ -1,145 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://3ghnh3j7dab5"]
+[gd_scene load_steps=5 format=3 uid="uid://3ghnh3j7dab5"]
 
 [ext_resource type="PackedScene" uid="uid://dx7ksnt6jsvbp" path="res://3d/scene/LinacLab.glb" id="1_luyjo"]
+[ext_resource type="PackedScene" uid="uid://csltyp5tmoa3k" path="res://3d/scene/Simple_NakedFatMan/Pain_FatMan_Naked.fbx" id="2_0ko8g"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7tl7u"]
-viewport_path = NodePath("Sprite3D/GDCubismUserModel")
+[sub_resource type="ViewportTexture" id="ViewportTexture_8g3xt"]
+viewport_path = NodePath("Nurse/GDCubismUserModel")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_21i2q"]
+radius = 0.499603
+height = 4.90747
 
 [node name="Node3D" type="Node3D"]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(6.30933, 0, -24.1907, 0, 25, 0, 24.1907, 0, 6.30933, 240, 0, -274)
-texture = SubResource("ViewportTexture_7tl7u")
-
-[node name="GDCubismUserModel" type="GDCubismUserModel" parent="Sprite3D"]
-assets = "res://live2d/male/discord_mod/1399100.model3.json"
-anim_loop = true
-anim_loop_fade_in = true
-anim_expression = ""
-anim_motion = "_9"
-PARAM_ANGLE_X = -19.566
-PARAM_ANGLE_Y = -6.0
-PARAM_ANGLE_Z = -25.6
-PARAM_EYE_R_OPEN = 1.0
-PARAM_EYE_R_SMILE = 0.0
-PARAM_EYE_L_OPEN = 1.0
-PARAM_EYE_L_SMILE = 0.0
-PARAM_EYE_FORM = 0.0
-PARAM_EYE_BALL_X = 0.4
-PARAM_EYE_BALL_Y = -0.467
-PARAM_EYE_SCALE = 0.0
-PARAM_TEAR_LEAP_01 = 0.0
-PARAM_BROW_R_FORM = -0.4
-PARAM_BROW_R_X = 0.7
-PARAM_BROW_R_Y = -0.299
-PARAM_BROW_R_ANGLE = 0.3
-PARAM_BROW_L_FORM = 0.0
-PARAM_BROW_L_Y = -0.299
-PARAM_BROW_L_X = 0.7
-PARAM_BROW_L_ANGLE = 0.3
-PARAM_MOUTH_OPEN_Y = 0.0
-PARAM_MOUTH_FORM_01 = -2.0
-PARAM_MOUTH_POS_Y = -0.4
-PARAM_MOUTH_SCALE = 1.0
-PARAM_MOUTH_SCALE_Y = 0.0
-PARAM_SHOULDER_R_ROTATE = -14.045
-PARAM_ARM_R_ROTATE = 52.53
-PARAM_HAND_R_ROTATE = 18.014
-PARAM_ARM_R_ORDER = 0.0
-PARAM_SHOULDER_L_ROTATE = -29.0
-PARAM_ARM_L_ROTATE = 20.42
-PARAM_HAND_L_ROTATE = -23.0
-PARAM_ARM_L_ORDER = 0.0
-PARAM_BODY_ANGLE_X = -10.0
-PARAM_BODY_ANGLE_Y = 5.54
-PARAM_BODY_ANGLE_Z = -4.0
-PARAM_BREATH = 0.0
-PARAM_STRETCH = -0.396
-PARAM_SHOLDER_POSITION = -2.0
-PARAM_POSITION_X = 0.0
-PARAM_POSITION_Y = 0.0
-PARAM_ROTATION_Z = 0.4
-PARAM_BAST_SHAKE = 0.0
-PARAM_HAIR_FRONT = -0.0702532
-PARAM_HAIR_SIDE = -0.0789596
-PARAM_HAIR_BACK_01 = -0.0863844
-PARAM_HAIR_BACK_02 = -0.0360479
-PARAM_FLUFFY = -0.0667579
-PARAM_FACE_SHADOW = 0.0
-PARAM_FACE_CHANGE = 0.0
-PARAM_CHEEK_01 = 1.0
-PARAM_CHEEK_02 = 0.0
-PARAM_CHEEK_03 = 0.0
-PARAM_CHEEK_04 = 0.0
-PARAM_CHEEK_05 = 0.0
-PARAM_TEAR_01 = 0.0
-PARAM_TEAR_02 = 0.0
-PARAM_TEAR_02_MOVE = 0.0
-PARAM_TEAR_03 = 0.0
-PARAM_TEAR_03_MOVE = 0.0
-PARAM_SWEAT = 0.0
-PARAM_SWEAT_MOVE = 0.0
-PARAM_EYE_WHITE_00 = 1.0
-PARAM_EYE_WHITE_01 = 0.0
-PARAM_EYE_01 = 1.0
-PARAM_EYE_02 = 0.0
-PARAM_EYE_05 = 0.0
-PARAM_MOUTH_01 = 1.0
-PARAM_MOUTH_02 = 0.0
-PARAM_MOUTH_03 = 0.0
-PARAM_MOUTH_05 = 0.0
-PARAM_BROW_01 = 1.0
-PARAM_HAND_R_01 = 1.0
-PARAM_HAND_R_02 = 1.0
-PARAM_HAND_R_03 = 0.0
-PARAM_HAND_R_04 = 0.0
-PARAM_HAND_R_05 = 0.0
-PARAM_HAND_R_06 = 0.0
-PARAM_HAND_R_07 = 0.0
-PARAM_HAND_R_08 = 0.0
-PARAM_HAND_R_09 = 0.0
-PARAM_HAND_R_10 = 0.0
-PARAM_HAND_R_11 = 0.0
-PARAM_HAND_L_01 = 1.0
-PARAM_HAND_L_02 = 1.0
-PARAM_HAND_L_03 = 0.0
-PARAM_HAND_L_04 = 0.0
-PARAM_HAND_L_05 = 0.0
-PARAM_HAND_L_06 = 0.0
-PARAM_HAND_L_07 = 0.0
-PARAM_HAND_L_08 = 0.0
-PARAM_HAND_L_09 = 0.0
-PARAM_HAND_L_10 = 0.0
-PARAM_HAND_L_11 = 0.0
-PARAM_UPPER_BODY_FLUFFY = 0.0493937
-PARAM_LOWER_BODY_FLUFFY = 0.0255048
-PartCore = 1.0
-PartFrontHair = 1.0
-PartEyebrow = 1.0
-PartMouth = 1.0
-PartEyeL = 1.0
-PartEyeR = 1.0
-PartCheek = 1.0
-PartHead = 1.0
-PartBackHair = 1.0
-PartExpression = 1.0
-PartNeck = 1.0
-PartUpperBody = 1.0
-PartArmR = 1.0
-PartArmL = 1.0
-PartLowerBody = 1.0
-PartFoot = 1.0
-PartHandR = 1.0
-PartHandL = 1.0
-disable_3d = true
-transparent_bg = true
-gui_disable_input = true
-size = Vector2i(2048, 2048)
-render_target_update_mode = 4
-
-[node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Sprite3D/GDCubismUserModel"]
-
-[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Sprite3D/GDCubismUserModel"]
 
 [node name="LinacLab" parent="." instance=ExtResource("1_luyjo")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 212.556, -211.174, -540.063)
@@ -147,6 +18,144 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 212.556, -211.174, -540
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.43337, 0.112351, -0.894186, -0.250954, -0.967999, 5.63063e-08, -0.865571, 0.2244, 0.447697, -406.783, 120.905, -355.319)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="OverviewCamera" type="Camera3D" parent="."]
 transform = Transform3D(0.704206, 0.391853, -0.592068, -0.0808568, 0.872741, 0.481441, 0.705376, -0.291161, 0.646274, -57.4223, 163.052, -274.459)
 fov = 90.0
+
+[node name="Landlord" parent="." instance=ExtResource("2_0ko8g")]
+transform = Transform3D(-0.768051, 149.695, 9.53133, -12.0236, -9.56223, 149.211, 149.515, 0, 12.0481, 12.0537, -4.74834, -606.923)
+
+[node name="Skeleton3D" parent="Landlord/RootNode/Game_engine" index="0"]
+bones/45/position = Vector3(0.011905, -0.000377829, -0.00103874)
+bones/45/rotation = Quaternion(0.917825, 0.0897365, -0.196097, -0.333304)
+bones/45/scale = Vector3(1, 1, 1)
+bones/49/position = Vector3(-0.011905, -0.00037784, -0.00103875)
+bones/49/rotation = Quaternion(0.920949, -0.0706016, 0.201897, -0.32574)
+bones/49/scale = Vector3(1, 1, 1)
+
+[node name="Nurse" type="Sprite3D" parent="."]
+transform = Transform3D(1.88977, 0, -4.62912, 0, 5, 0, 4.62912, 0, 1.88977, 190.97, -125.108, -473.041)
+texture = SubResource("ViewportTexture_8g3xt")
+
+[node name="GDCubismUserModel" type="GDCubismUserModel" parent="Nurse"]
+assets = "res://live2d/office_f_vts/office_f_vts/office_f.model3.json"
+anim_loop = false
+anim_loop_fade_in = true
+anim_expression = ""
+anim_motion = ""
+ParamAngleX = 0.400786
+ParamAngleY = -3.00861
+ParamAngleZ = 4.65729
+ParamEyeLOpen = 1.0
+ParamEyeLSmile = 0.0
+ParamEyeROpen = 1.0
+ParamEyeRSmile = 0.0
+ParamEyeForm = 0.0
+ParamEyeBallX = 0.0
+ParamEyeBallY = 0.0
+ParamEyeBallForm = 0.0
+ParamEyeEffectYure = 0.0
+ParamEyeBallHi = 0.0
+ParamEyeEffect = 0.0
+ParamBrowLY = 0.0
+ParamBrowRY = 0.0
+ParamBrowLX = 0.0
+ParamBrowRX = 0.0
+ParamBrowLAngle = 0.0
+ParamBrowRAngle = 0.0
+ParamBrowLForm = 0.0
+ParamBrowRForm = 0.0
+ParamMouthForm01 = 0.0
+ParamMouthOpenY = 0.0
+ParamMouthForm02 = 0.0
+ParamMouthSize = 0.0
+ParamTear = 0.0
+ParamCheek = 0.0
+ParamGlasses = 0.0
+ParamBackHair = 0.0
+ParamBodyAngleX = 0.916663
+ParamBodyAngleY = 0.0
+ParamBodyAngleZ = 0.0
+ParamAngleD = 0.0
+ParamBreath = 0.308271
+ParamShoulderUp = 0.0
+ParamLegL = 0.0
+ParamKneesL = 0.0
+ParamAnkleL = 0.0
+ParamLegR = 0.0
+ParamKneesR = 0.0
+ParamAnkleR = 0.0
+ParamArmL01 = 0.0
+ParamArmL02 = 0.0
+ParamHandL01 = 0.0
+ParamHandL02 = 0.0
+ParamArmR01 = 0.0
+ParamArmR02 = 0.0
+ParamHandR01 = 0.0
+ParamHandR02 = 0.0
+ParamHairFront = 0.0134298
+ParamHairSide = 0.0175993
+ParamHairBack = 0.0143952
+ParamRibbon = 0.0023919
+ParamSkirt = 0.00162576
+ParamScale = 0.0
+ParamPositionX = 0.0
+ParamPositionY = 0.0
+Part10 = 1.0
+Part21 = 1.0
+Part = 1.0
+Part2 = 1.0
+Part5 = 1.0
+Part18 = 1.0
+Part17 = 1.0
+Part9 = 1.0
+Part25 = 1.0
+Part24 = 1.0
+Part6 = 1.0
+Part13 = 1.0
+Part23 = 1.0
+Part15 = 1.0
+Part16 = 1.0
+Part3 = 1.0
+Part4 = 1.0
+Part7 = 1.0
+Part22 = 1.0
+Part19 = 1.0
+Part20 = 1.0
+Part8 = 1.0
+Part26 = 1.0
+Part27 = 1.0
+Part11 = 1.0
+Part12 = 1.0
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(4096, 4096)
+render_target_update_mode = 4
+
+[node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Nurse/GDCubismUserModel"]
+
+[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Nurse/GDCubismUserModel"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Nurse"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nurse/StaticBody3D"]
+shape = SubResource("CapsuleShape3D_21i2q")
+
+[node name="NurseCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.629125, 0.0507586, -0.775645, -0.0146673, 0.998463, 0.0534433, 0.777166, -0.0222459, 0.628902, 106.095, -36.8401, -437.818)
+current = true
+
+[node name="PDP11Cam" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.987521, 0.157486, 0, -0.157486, 0.987521, -196.181, 88.4243, -516.404)
+
+[node name="VT100Cam" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.80341, 0.595426, 0, -0.595426, 0.80341, -311.947, -74.78, -912.902)
+current = true
+
+[node name="PatrickTomlinsonCam" type="Camera3D" parent="."]
+transform = Transform3D(0.105898, 0.92414, -0.367085, -0.256154, 0.382054, 0.88793, 0.960818, 3.82107e-08, 0.27718, 217.499, 26.2686, -593.289)
+current = true
+
+[editable path="LinacLab"]
+[editable path="Landlord"]

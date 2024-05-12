@@ -23,6 +23,7 @@ func _ready():
 	p.set_physics_process(false);
 	p.set_process_input(false);
 	p.set_process_unhandled_input(false);
+	# grab this from a child node I guess so that I only need one player.gd for all scenes
 	var start_cam: Camera3D = get_node("/root/Node3D/TheBedroom/WakeupCamera");
 	var player_cam: Camera3D = p.find_child("Camera3D");
 	start_cam.make_current();

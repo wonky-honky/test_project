@@ -15,7 +15,7 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 [application]
 
 config/name="if_your_happy_and_you_know_it"
-run/main_scene="res://apartment.tscn"
+run/main_scene="res://test_live2d.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
