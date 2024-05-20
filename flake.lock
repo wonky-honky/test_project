@@ -27,11 +27,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1715248000,
-        "narHash": "sha256-UbmdQvNheJ9jutIsJ/WJ9Wfn5Sq5o0qBRcTUWxlkpWs=",
+        "lastModified": 1716206189,
+        "narHash": "sha256-q9xRGBuP6euUv+TihDhvoTyTebEvrsm1Hid9lsPmdS8=",
         "owner": "wonky-honky",
         "repo": "godot-slimflake",
-        "rev": "0ab4a9e39c17b12b216932e402e716b36b29c52b",
+        "rev": "5177d47dce7a7e495b3922d1f90e10a42a92a884",
         "type": "github"
       },
       "original": {
