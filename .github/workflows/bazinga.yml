@@ -1,6 +1,3 @@
-wip:
-  fail
-
 on:
   push:
     paths-ignore:
