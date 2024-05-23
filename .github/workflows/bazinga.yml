@@ -8,7 +8,6 @@ on:
       - '**.import'
       - 'live2d/**'
       - '3d/**'
-      - 'addons/**'
       - 'scenes/**'
     
 jobs:
