@@ -35,14 +35,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Clean up dev environment
+      - name: Clean up dev environment 1/?
         run: |
           unlink addons/gd_cubism
           unlink addons/therac_sim
           unlink addons/tooting
+      - name: Clean up dev environment 2/? Linux
+        if: ${{matrix.os == 'ubuntu-latest' }}
+        run: |
           rm -rf ext/gd_cubism
           rm -rf ext/tooting
           rm -rf ext/therac_sim
+      - name: Clean up dev environment 2/? Windows
+        if: ${{matrix.os == 'windows-latest' }}
+        run: |
+          Remove-Item -Recurse -Force ext/gd_cubism
+          Remove-Item -Recurse -Force ext/tooting
+          Remove-Item -Recurse -Force ext/therac_sim
       - uses: actions/download-artifact@v4
         with:
           name: tooting-Release-${{ runner.os }}
@@ -194,6 +203,7 @@ jobs:
       - name: Pack game data Linux
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
+          chmod a+x ./godot-bin -R
           ./godot-bin/godot.linuxbsd.template_release.x86_64 --export-pack Linux game_data.pck
       - name: Pack game data Linux
         if: ${{ matrix.os == 'windows-latest' }}
