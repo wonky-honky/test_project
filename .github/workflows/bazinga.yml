@@ -204,11 +204,13 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           chmod a+x ./godot-bin -R
-          ./godot-bin/godot.linuxbsd.template_release.x86_64 --export-pack Linux game_data.pck
+          ./godot-bin/godot.linuxbsd.template_release.x86_64 --headless --verbose --export-pack Linux game_data.pck
+          ls -lFh
       - name: Pack game data Linux
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
-          ./godot-bin/godot.windows.template_release.x86_64.exe --export-pack Windows game_data.pck
+          ./godot-bin/godot.windows.template_release.x86_64.exe --verbose --headless --export-pack Windows game_data.pck
+          dir
       - name: Start preparing final directory
         run: |
           mkdir ../game
