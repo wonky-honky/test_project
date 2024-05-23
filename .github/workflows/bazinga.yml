@@ -13,11 +13,10 @@ on:
       - '3d/**'
       - 'ext/**'
       - 'scenes/**'
-  pull-request:
     
 jobs:
   therac_sim:
-    uses: pillowtrucker/hstherac25/.github/workflows/build.yml@main
+    uses: wonky-honky/therac_sim/.github/workflows/main.yml@main
     with:
       therac_sim_subdirectory: ext/therac_sim
   gd_cubism:
@@ -32,22 +31,34 @@ jobs:
     needs: [therac_sim,gd_cubism,tooting]
     name: bundle up game on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-      strategy:
-        fail-fast: false
-        matrix:
-          os: [ubuntu-latest, windows-latest]
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Clean up dev environment
+        run: |
+          unlink addons/gd_cubism
+          unlink addons/therac_sim
+          unlink addons/tooting
+          rm -rf ext/gd_cubism
+          rm -rf ext/tooting
+          rm -rf ext/therac_sim
       - uses: actions/download-artifact@v4
         with:
-          name: tooting-Release # TODO: move libfurnace.so to the right place
-          path: prebuilt/tooting
+          name: tooting-Release
+          path: addons/tooting
       - uses: actions/download-artifact@v4
         with:
-          name: therac_sim-Release # TODO: actually copy/move hstherac to this artifact
-          path: prebuilt/therac_sim
+          name: therac_sim-Release
+          path: addons/therac_sim
+      - uses: actions/download-artifact@v4
+        with:
+          name: gd_cubism-${{ runner.os }}
+          path: addons/gd_cubism
       - name: Download godot linux
         if: ${{ matrix.os == 'ubuntu-latest' }}
         id: download-godot-artifact-linux
@@ -95,7 +106,7 @@ jobs:
           # Optional, name is treated as a regular expression if set true
 #          name_is_regexp: true
           # Optional, a directory where to extract artifact(s), defaults to the current directory
-#          path: extract_here
+          path: godot-bin
           # Optional, defaults to current repo
           repo: pillowtrucker/godot
           # Optional, check the workflow run to whether it has an artifact
@@ -163,7 +174,7 @@ jobs:
           # Optional, name is treated as a regular expression if set true
 #          name_is_regexp: true
           # Optional, a directory where to extract artifact(s), defaults to the current directory
-#          path: extract_here
+          path: godot-bin
           # Optional, defaults to current repo
           repo: pillowtrucker/godot
           # Optional, check the workflow run to whether it has an artifact
@@ -184,3 +195,45 @@ jobs:
           # Optional, ignore forks when searching for artifacts
           # default true
           allow_forks: false
+      - name: Pack game data Linux
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: |
+          ./godot-bin/godot.linuxbsd.template_release.x86_64 --export-pack Linux game_data.pck
+      - name: Pack game data Linux
+        if: ${{ matrix.os == 'windows-latest' }}
+        run: |
+          ./godot-bin/godot.windows.template_release.x86_64.exe --export-pack Windows game_data.pck
+      - name: Start preparing final directory
+        run: |
+          mkdir ../game
+          mv game_data.pck ../game/
+      - name: Prepare appimage 
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-static-x86_64.AppImage
+          chmod a+x ./linuxdeploy-static-x86_64.AppImage
+          ./linuxdeploy-static-x86_64.AppImage --appdir ../game
+      - name: Deploy executable windows
+        if: ${{ matrix.os == 'windows-latest' }}
+        run: |
+          cp godot-bin/* ../game/
+      - name: Finish appimage
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          mv ext/tooting/usr/lib/* ../game/usr/lib/
+          mv ext/therac_sim/usr/lib/* ../game/usr/lib/
+          mv ../game/game_data.pck ../game/usr/bin/
+          mv godot-bin/* ../game/usr/bin/
+          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e godot.linuxbsd.template_release.x86_64 --output appimage
+      - name: Upload linux artefact
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v3
+        with:
+          name: game-linux-appimage
+          path: game.AppImage
+      - name: Upload windows artefact
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v3
+        with:
+          name: game-windows
+          path: ../game
