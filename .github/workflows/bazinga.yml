@@ -45,11 +45,11 @@ jobs:
           rm -rf ext/therac_sim
       - uses: actions/download-artifact@v4
         with:
-          name: tooting-Release
+          name: tooting-Release-${{ runner.os }}
           path: addons/tooting
       - uses: actions/download-artifact@v4
         with:
-          name: therac_sim-Release
+          name: therac_sim-Release-${{ runner.os }}
           path: addons/therac_sim
       - uses: actions/download-artifact@v4
         with:
