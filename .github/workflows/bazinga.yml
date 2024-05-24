@@ -270,12 +270,18 @@ jobs:
         with:
           name: game-windows
           path: D:/a/test_project/game/**
+      - name: Clean up symlinks on windows before uploading unpacked
+        if: matrix.os == 'windows-latest'
+        run: |
+          unlink addons/zylann.hterrain
+          cp ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
+          Remove-Item -Recurse -Force ext/godot_heightmap_plugin
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
           name: game-windows-unpacked
-          path: ${{ github.workspace }}/**
+          path: ${{ github.workspace }}
       - name: Remove appimage before packing raw data
         if: matrix.os == 'ubuntu-latest'
         run: rm -f game.AppImage
