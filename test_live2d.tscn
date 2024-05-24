@@ -25,12 +25,6 @@ fov = 90.0
 [node name="Landlord" parent="." instance=ExtResource("2_0ko8g")]
 transform = Transform3D(-0.768051, 149.695, 9.53133, -12.0236, -9.56223, 149.211, 149.515, 0, 12.0481, 12.0537, -4.74834, -606.923)
 
-[node name="Skeleton3D" parent="Landlord/RootNode/Game_engine" index="0"]
-bones/45/position = Vector3(0.011905, -0.000377829, -0.00103874)
-bones/45/rotation = Quaternion(0.917825, 0.0897365, -0.196097, -0.333304)
-bones/49/position = Vector3(-0.011905, -0.00037784, -0.00103875)
-bones/49/rotation = Quaternion(0.920949, -0.0706016, 0.201897, -0.32574)
-
 [node name="Nurse" type="Sprite3D" parent="."]
 transform = Transform3D(1.88977, 0, -4.62912, 0, 5, 0, 4.62912, 0, 1.88977, 190.97, -125.108, -473.041)
 texture = SubResource("ViewportTexture_8g3xt")
@@ -41,9 +35,9 @@ anim_loop = false
 anim_loop_fade_in = true
 anim_expression = ""
 anim_motion = ""
-ParamAngleX = 5.68324
-ParamAngleY = 3.99928
-ParamAngleZ = 4.24806
+ParamAngleX = -7.40166
+ParamAngleY = -3.97977
+ParamAngleZ = -2.34768
 ParamEyeLOpen = 1.0
 ParamEyeLSmile = 0.0
 ParamEyeROpen = 1.0
@@ -71,11 +65,11 @@ ParamTear = 0.0
 ParamCheek = 0.0
 ParamGlasses = 0.0
 ParamBackHair = 0.0
-ParamBodyAngleX = 0.707737
+ParamBodyAngleX = -0.160583
 ParamBodyAngleY = 0.0
 ParamBodyAngleZ = 0.0
 ParamAngleD = 0.0
-ParamBreath = 0.496548
+ParamBreath = 0.181666
 ParamShoulderUp = 0.0
 ParamLegL = 0.0
 ParamKneesL = 0.0
@@ -91,11 +85,11 @@ ParamArmR01 = 0.0
 ParamArmR02 = 0.0
 ParamHandR01 = 0.0
 ParamHandR02 = 0.0
-ParamHairFront = 0.0132482
-ParamHairSide = 0.017783
-ParamHairBack = 0.0157985
-ParamRibbon = 0.00647695
-ParamSkirt = -0.0308453
+ParamHairFront = -0.0101928
+ParamHairSide = -0.0121949
+ParamHairBack = -0.0114213
+ParamRibbon = -0.00258436
+ParamSkirt = -0.00166257
 ParamScale = 0.0
 ParamPositionX = 0.0
 ParamPositionY = 0.0

@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ccblqncqcth05"
+path="res://.godot/imported/piano_0.png-1964710925fc2e74f5fc3b03ad8af8d7.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "8698ef5d3f6508b000661a9a337e8047"
+}
+
+[deps]
+
+source_file="res://3d/scene/piano keys/source/piano_0.png"
+dest_files=["res://.godot/imported/piano_0.png-1964710925fc2e74f5fc3b03ad8af8d7.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

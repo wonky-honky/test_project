@@ -69,14 +69,14 @@ jobs:
         with:
           name: therac_sim-Release-${{ runner.os }}
           path: addons/therac_sim
-      - uses: actions/download-artifact@v4
-        with:
-          name: tooting-Debug-${{ runner.os }}
-          path: addons/tooting
-      - uses: actions/download-artifact@v4
-        with:
-          name: therac_sim-Debug-${{ runner.os }}
-          path: addons/therac_sim
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: tooting-Debug-${{ runner.os }}
+#          path: addons/tooting
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: therac_sim-Debug-${{ runner.os }}
+#          path: addons/therac_sim
       - uses: actions/download-artifact@v4
         with:
           name: gd_cubism-${{ runner.os }}
@@ -281,7 +281,6 @@ jobs:
         run: |
           unlink addons/zylann.hterrain
           cp ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
-          Remove-Item -Recurse -Force .godot
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
