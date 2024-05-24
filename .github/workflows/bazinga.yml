@@ -43,18 +43,21 @@ jobs:
           lfs: true
       - name: Clean up dev environment 1/?
         run: |
+
           unlink addons/gd_cubism
           unlink addons/therac_sim
           unlink addons/tooting
       - name: Clean up dev environment 2/? Linux
         if: ${{matrix.os == 'ubuntu-latest' }}
         run: |
+          rm -rf .git
           rm -rf ext/gd_cubism
           rm -rf ext/tooting
           rm -rf ext/therac_sim
       - name: Clean up dev environment 2/? Windows
         if: ${{matrix.os == 'windows-latest' }}
         run: |
+          Remove-Item -Recurse -Force .git
           Remove-Item -Recurse -Force ext/gd_cubism
           Remove-Item -Recurse -Force ext/tooting
           Remove-Item -Recurse -Force ext/therac_sim
@@ -258,6 +261,7 @@ jobs:
           mv ../game/game_data.pck ../game/usr/bin/
           cp -rf godot-bin/* ../game/usr/bin/
           cp TheracGame.desktop ../game/
+          cp myapp.png ../game/
           LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ../game/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux artefact
         if: matrix.os == 'ubuntu-latest'
@@ -271,12 +275,11 @@ jobs:
         with:
           name: game-windows
           path: D:/a/test_project/game/**
-      - name: Clean up symlinks on windows before uploading unpacked, and delete .godot
+      - name: Clean up symlinks on windows before uploading unpacked
         if: matrix.os == 'windows-latest'
         run: |
           unlink addons/zylann.hterrain
           cp ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
-          Remove-Item -Recurse -Force .godot
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
@@ -305,6 +308,7 @@ jobs:
           mv godot-bin/* ./usr/bin/
           mv usr ../other/
           mv TheracGame.desktop ../other/
+          mv myapp.png ../other/
           mv ./* ../other/usr/bin/
           ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other
           LINUXDEPLOY_OUTPUT_APP_NAME=game-unpacked ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
