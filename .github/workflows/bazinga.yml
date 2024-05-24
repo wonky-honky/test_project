@@ -68,8 +68,8 @@ jobs:
       - name: hmmm
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
-          cp -f addons/tooting/usr/lib/* /usr/local/lib/
-          cp -f addons/therac_sim/usr/lib/* /usr/local/lib/
+          sudo cp -f addons/tooting/usr/lib/* /usr/local/lib/
+          sudo cp -f addons/therac_sim/usr/lib/* /usr/local/lib/
           # this only really lists search paths with gnu binutils and stack overflow is full of clowns but this is the default ubuntu runner so it might work
           ld --verbose | grep SEARCH_DIR
       - name: Download godot linux

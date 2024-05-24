@@ -1,16 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716487113
+::res://::1716543671
 attic.tscn::PackedScene::1274724119318324659::1713878594::0::1::::<><>::uid://b4ecrrty12dmd::::res://3d/scene/zatec_synagogue_tower_top_room/scene.gltf
 chorus.gd::GDScript::-1::1715268762::0::1::::<>AspectRatioContainer<>::res://chorus.gd<>res://global_state.gd
+export_presets.cfg::TextFile::-1::1716488051::0::1::::<><>::
 global_state.gd::GDScript::-1::1715268548::0::1::::<>Node<>::
 hospital_interior.tscn::PackedScene::3140568271949020691::1713879920::0::1::::<><>::uid://50f2ry3hslf3::::res://3d/scene/hospital_save_room/scene.gltf
 hospital_outside.tscn::PackedScene::767712518683672070::1713879680::0::1::::<><>::uid://cjf1ucwu37d1f::::res://3d/scene/nunnery_hospital_photogrammetry/scene.gltf
 hud.gd::GDScript::-1::1714573218::0::1::::<>AspectRatioContainer<>::
 icon.svg::CompressedTexture2D::6039857167591506481::1712321991::1712321995::1::::<><>::
-test_live2d.tscn::PackedScene::1978122534029168504::1716472355::0::1::::<><>::uid://dx7ksnt6jsvbp::::res://3d/scene/LinacLab.glb<>uid://csltyp5tmoa3k::::res://3d/scene/Simple_NakedFatMan/Pain_FatMan_Naked.fbx
-test_piano2.tscn::PackedScene::2991266670331579762::1716472355::0::1::::<><>::uid://bqvtlkxlc7c7a::::res://3d/scene/realistic_custom_concert_grand_piano/scene.gltf<>uid://cx30rqxm6k5en::::res://3d/scene/piano keys/source/piano.fbx
+test_live2d.tscn::PackedScene::1978122534029168504::1716543177::0::1::::<><>::uid://dx7ksnt6jsvbp::::res://3d/scene/LinacLab.glb<>uid://csltyp5tmoa3k::::res://3d/scene/Simple_NakedFatMan/Pain_FatMan_Naked.fbx
+test_piano2.tscn::PackedScene::2991266670331579762::1716543177::0::1::::<><>::uid://bqvtlkxlc7c7a::::res://3d/scene/realistic_custom_concert_grand_piano/scene.gltf<>uid://cx30rqxm6k5en::::res://3d/scene/piano keys/source/piano.fbx
 test_piano.gd::GDScript::-1::1713712026::0::1::::<>Node<>::
-test_piano.tscn::PackedScene::8069505753350846184::1716472355::0::1::::<><>::uid://bibomyt4hbiu4::::res://3d/scene/Upright_Piano.glb<>res://test_piano.gd<>res://3d/scene/Upright_Piano.gd
+test_piano.tscn::PackedScene::8069505753350846184::1716543177::0::1::::<><>::uid://bibomyt4hbiu4::::res://3d/scene/Upright_Piano.glb<>res://test_piano.gd<>res://3d/scene/Upright_Piano.gd
 tooting.gd::GDScript::-1::1713813780::0::1::::<>Toot<>::
 ::res://3d/::1714075260
 ::res://3d/gargamelhterrain/::1714139437
@@ -454,7 +455,7 @@ license.txt::TextFile::-1::1646857952::0::1::::<><>::
 scene.gltf::PackedScene::4430307376068691807::1646857988::1713878457::1::::<><>::uid://d12umewo348h::::res://3d/scene/zatec_synagogue_tower_top_room/textures/Material_u1_v1_diffuse.jpeg
 ::res://3d/scene/zatec_synagogue_tower_top_room/textures/::1713878458
 Material_u1_v1_diffuse.jpeg::CompressedTexture2D::265916064681286365::1646857968::1713878458::1::::<><>::
-::res://addons/::1715509943
+::res://addons/::1716496045
 ::res://addons/gd_cubism/::1712331688
 gd_cubism.gdextension::GDExtension::-1::1712331688::0::1::::<><>::
 ::res://addons/gd_cubism/bin/::1715249998
@@ -615,13 +616,19 @@ texture_00.png::CompressedTexture2D::5081484734938388330::1712346130::1712392054
 2d_cubism_norm_add.gdshader::Shader::-1::1712331688::0::1::::<><>::
 2d_cubism_norm_mix.gdshader::Shader::-1::1712331688::0::1::::<><>::
 2d_cubism_norm_mul.gdshader::Shader::-1::1712331688::0::1::::<><>::
-::res://addons/tooting/::1716472256
-tooting.gdextension::GDExtension::-1::1716472256::0::1::::<><>::
-::res://addons/tooting/icons/::1716472331
-Example.svg::CompressedTexture2D::4675267978129546661::1716468801::1716472331::1::::<><>::
+::res://addons/therac_sim/::1716543655
+therac_sim.gdextension::GDExtension::-1::1716543655::0::1::::<><>::
+::res://addons/therac_sim/icons/::1716543151
+Example.svg::CompressedTexture2D::7270601880652106765::1716543141::1716543151::1::::<><>::
+::res://addons/therac_sim/lib/::1716469890
+::res://addons/therac_sim/lib/Linux-x86_64/::1716543141
+::res://addons/tooting/::1716543624
+tooting.gdextension::GDExtension::-1::1716543624::0::1::::<><>::
+::res://addons/tooting/icons/::1716542935
+Example.svg::CompressedTexture2D::4675267978129546661::1716542935::1716472331::1::::<><>::
 ::res://addons/tooting/lib/::1716468535
-::res://addons/tooting/lib/Linux-x86_64/::1716468801
-::res://addons/tooting/testres/::1716468801
+::res://addons/tooting/lib/Linux-x86_64/::1716542935
+::res://addons/tooting/testres/::1716542935
 ::res://addons/UniversalFade/::1714771286
 Fade.gd::GDScript::-1::1714766737::0::1::::Fade<>CanvasLayer<>::
 Fade.tscn::PackedScene::2309856673902019818::1714768883::0::1::::<><>::res://addons/UniversalFade/Fade.gd
