@@ -3,3 +3,7 @@
 3d/scene/glimmingehus_borg_och_vallgrav/scene.bin filter=lfs diff=lfs merge=lfs -text
 scenes/homeslums/homeslums.occ filter=lfs diff=lfs merge=lfs -text
 live2d/Caligula/Caligula.8192/texture_00.png filter=lfs diff=lfs merge=lfs -text
+.godot/imported/scene.gltf-675d3d9e816dc83b255a43edef1d9146.scn filter=lfs diff=lfs merge=lfs -text
+.godot/imported/LinacLab_empty-red-brick-wall.jpg-4da8a4542582a302d8b611222ef0378e.ctex filter=lfs diff=lfs merge=lfs -text
+.godot/imported/nunnery_baseColor.jpeg-1a8c65b0fc1c6f225450a216aabdc4bb.ctex filter=lfs diff=lfs merge=lfs -text
+.godot/imported/model_Material_u1_v1_baseColor.jpeg-87f91de63358fcb4043c09cfa6e981e2.ctex filter=lfs diff=lfs merge=lfs -text

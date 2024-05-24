@@ -1,0 +1,14 @@
+Camera3D
+CollisionShape3D
+StaticBody3D
+GDCubismEffectBreath
+GDCubismEffectEyeBlink
+GDCubismUserModel
+Sprite3D
+MeshInstance3D
+RigidBody3D
+RichTextLabel
+RayCast3D
+ColorRect
+CenterContainer
+Line2D
