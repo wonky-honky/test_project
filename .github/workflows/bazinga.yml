@@ -242,7 +242,9 @@ jobs:
         run: |
           wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-static-x86_64.AppImage
           wget https://github.com/AppImage/AppImageKit/releases/download/13/AppRun-x86_64 -O AppRun
+          chmod a+x godot-bin -R
           chmod a+x ./linuxdeploy-static-x86_64.AppImage
+          chmod a+x ./AppRun
 #          ./linuxdeploy-static-x86_64.AppImage --appdir ../game
 #      - name: Deploy executable windows
 #        if: ${{ matrix.os == 'windows-latest' }}
