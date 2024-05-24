@@ -32,6 +32,11 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     steps:
+      - name: Install apt Dependencies (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ccache ninja-build git libasound2-dev librtmidi-dev libsndfile1-dev zlib1g-dev libfmt-dev libsdl2-dev
       - uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -260,4 +265,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: game-windows
-          path: ${{ github.workspace }}/../game
+          path: D:/a/test_project/game

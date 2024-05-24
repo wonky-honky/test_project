@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716548102
+::res://::1716548107
 attic.tscn::PackedScene::1274724119318324659::1713878594::0::1::::<><>::uid://b4ecrrty12dmd::::res://3d/scene/zatec_synagogue_tower_top_room/scene.gltf
 chorus.gd::GDScript::-1::1715268762::0::1::::<>AspectRatioContainer<>::res://chorus.gd<>res://global_state.gd
 export_presets.cfg::TextFile::-1::1716488051::0::1::::<><>::
@@ -8,10 +8,10 @@ hospital_interior.tscn::PackedScene::3140568271949020691::1713879920::0::1::::<>
 hospital_outside.tscn::PackedScene::767712518683672070::1713879680::0::1::::<><>::uid://cjf1ucwu37d1f::::res://3d/scene/nunnery_hospital_photogrammetry/scene.gltf
 hud.gd::GDScript::-1::1714573218::0::1::::<>AspectRatioContainer<>::
 icon.svg::CompressedTexture2D::6039857167591506481::1712321991::1712321995::1::::<><>::
-test_live2d.tscn::PackedScene::1978122534029168504::1716545440::0::1::::<><>::uid://dx7ksnt6jsvbp::::res://3d/scene/LinacLab.glb<>uid://csltyp5tmoa3k::::res://3d/scene/Simple_NakedFatMan/Pain_FatMan_Naked.fbx
+test_live2d.tscn::PackedScene::1978122534029168504::1716548107::0::1::::<><>::uid://dx7ksnt6jsvbp::::res://3d/scene/LinacLab.glb<>uid://csltyp5tmoa3k::::res://3d/scene/Simple_NakedFatMan/Pain_FatMan_Naked.fbx
 test_piano2.tscn::PackedScene::2991266670331579762::1716545432::0::1::::<><>::uid://bqvtlkxlc7c7a::::res://3d/scene/realistic_custom_concert_grand_piano/scene.gltf<>uid://cx30rqxm6k5en::::res://3d/scene/piano keys/source/piano.fbx
 test_piano.gd::GDScript::-1::1713712026::0::1::::<>Node<>::
-test_piano.tscn::PackedScene::8069505753350846184::1716545441::0::1::::<><>::uid://bibomyt4hbiu4::::res://3d/scene/Upright_Piano.glb<>res://test_piano.gd<>res://3d/scene/Upright_Piano.gd
+test_piano.tscn::PackedScene::8069505753350846184::1716548107::0::1::::<><>::uid://bibomyt4hbiu4::::res://3d/scene/Upright_Piano.glb<>res://test_piano.gd<>res://3d/scene/Upright_Piano.gd
 tooting.gd::GDScript::-1::1713813780::0::1::::<>Toot<>::
 ::res://3d/::1714075260
 ::res://3d/gargamelhterrain/::1714139437
