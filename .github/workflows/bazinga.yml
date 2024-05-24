@@ -63,6 +63,14 @@ jobs:
           path: addons/therac_sim
       - uses: actions/download-artifact@v4
         with:
+          name: tooting-Debug-${{ runner.os }}
+          path: addons/tooting
+      - uses: actions/download-artifact@v4
+        with:
+          name: therac_sim-Debug-${{ runner.os }}
+          path: addons/therac_sim
+      - uses: actions/download-artifact@v4
+        with:
           name: gd_cubism-${{ runner.os }}
           path: addons/gd_cubism
       - name: hmmm
@@ -115,7 +123,7 @@ jobs:
           # is treated as a regular expression if input name_is_regexp is true
           # will download only those artifacts with a name that matches this regular expression
           # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
-          name: linux-template-minimal
+          name: linux-editor-mono
           # Optional, name is treated as a regular expression if set true
 #          name_is_regexp: true
           # Optional, a directory where to extract artifact(s), defaults to the current directory
@@ -183,7 +191,7 @@ jobs:
           # is treated as a regular expression if input name_is_regexp is true
           # will download only those artifacts with a name that matches this regular expression
           # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
-          name: windows-template
+          name: windows-editor
           # Optional, name is treated as a regular expression if set true
 #          name_is_regexp: true
           # Optional, a directory where to extract artifact(s), defaults to the current directory
@@ -212,12 +220,12 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           chmod a+x ./godot-bin -R
-          ./godot-bin/godot.linuxbsd.template_release.x86_64 --headless --verbose --export-pack Linux game_data.pck
+          ./godot-bin/godot.linuxbsd.editor.x86_64.mono --headless --verbose --export-pack Linux game_data.pck
           ls -lFh
-      - name: Pack game data Linux
+      - name: Pack game data Windows
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
-          ./godot-bin/godot.windows.template_release.x86_64.exe --verbose --headless --export-pack Windows game_data.pck
+          ./godot-bin/godot.windows.editor.x86_64.exe --verbose --headless --export-pack Windows game_data.pck
           dir
       - name: Start preparing final directory
         run: |
@@ -240,7 +248,7 @@ jobs:
           mv ext/therac_sim/usr/lib/* ../game/usr/lib/
           mv ../game/game_data.pck ../game/usr/bin/
           mv godot-bin/* ../game/usr/bin/
-          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e godot.linuxbsd.template_release.x86_64 --output appimage
+          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ./godot-bin/godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux artefact
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v3
