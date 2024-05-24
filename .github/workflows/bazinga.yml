@@ -45,7 +45,7 @@ jobs:
         run: |
 
           unlink addons/gd_cubism
-          unlink addons/therac_sim
+#          unlink addons/therac_sim
           unlink addons/tooting
       - name: Clean up dev environment 2/? Linux
         if: ${{matrix.os == 'ubuntu-latest' }}
@@ -65,10 +65,10 @@ jobs:
         with:
           name: tooting-Release-${{ runner.os }}
           path: addons/tooting
-      - uses: actions/download-artifact@v4
-        with:
-          name: therac_sim-Release-${{ runner.os }}
-          path: addons/therac_sim
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: therac_sim-Release-${{ runner.os }}
+#          path: addons/therac_sim
 #      - uses: actions/download-artifact@v4
 #        with:
 #          name: tooting-Debug-${{ runner.os }}
@@ -85,7 +85,7 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           sudo cp -f addons/tooting/usr/lib/* /usr/local/lib/
-          sudo cp -f addons/therac_sim/usr/lib/* /usr/local/lib/
+#          sudo cp -f addons/therac_sim/usr/lib/* /usr/local/lib/
           # this only really lists search paths with gnu binutils and stack overflow is full of clowns but this is the default ubuntu runner so it might work
           ld --verbose | grep SEARCH_DIR
       - name: Download godot linux
@@ -300,7 +300,7 @@ jobs:
           mv ./linuxdeploy-static-x86_64.AppImage ../
           mkdir -p ./usr/lib
           mv addons/tooting/usr/lib/* ./usr/lib/
-          mv addons/therac_sim/usr/lib/* ./usr/lib/
+#          mv addons/therac_sim/usr/lib/* ./usr/lib/
           mv godot-bin/* ./usr/bin/
           mv usr ../other/
           mv TheracGame.desktop ../other/
