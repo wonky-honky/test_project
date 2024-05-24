@@ -257,7 +257,7 @@ jobs:
           cp -f addons/therac_sim/usr/lib/* ../game/usr/lib/
           mv ../game/game_data.pck ../game/usr/bin/
           cp -rf godot-bin/* ../game/usr/bin/
-          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e godot.linuxbsd.editor.x86_64.mono --output appimage
+          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ../game/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux artefact
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
@@ -269,19 +269,39 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: game-windows
-          path: D:/a/test_project/game
+          path: D:/a/test_project/game/**
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
           name: game-windows-unpacked
-          path: ${{ github.workspace }}
+          path: ${{ github.workspace }}/**
       - name: Remove appimage before packing raw data
         if: matrix.os == 'ubuntu-latest'
         run: rm -f game.AppImage
-      - name: Upload linux unpacked
+#      - name: Upload linux unpacked
+#        if: matrix.os == 'ubuntu-latest'
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: game-linux-unpacked
+#          path: ${{ github.workspace }}
+      - name: make appimage with unpacked data
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          mkdir ../other
+          mkdir -p ./usr/bin
+          mv ./linuxdeploy-static-x86_64.AppImage ../
+          mkdir -p ./usr/lib
+          mv addons/tooting/usr/lib/* ./usr/lib/
+          mv addons/therac_sim/usr/lib/* ./usr/lib/
+          mv godot-bin/* ./usr/bin/
+          mv usr ../other/
+          mv ./* ../other/usr/bin/
+          ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other
+          LINUXDEPLOY_OUTPUT_APP_NAME=game-unpacked ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
+      - name: Upload linux unpacked appimage
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: game-linux-unpacked
-          path: ${{ github.workspace }}
+          path: game-unpacked.AppImage
