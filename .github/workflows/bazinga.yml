@@ -234,7 +234,6 @@ jobs:
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
           ./godot-bin/godot.windows.editor.x86_64.exe --verbose --headless --export-pack Windows game_data.pck
-          dir
       - name: Start preparing final directory
         run: |
           mkdir ../game
@@ -248,27 +247,28 @@ jobs:
       - name: Deploy executable windows
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
-          cp godot-bin/* ../game/
+          Copy-Item -Path "godot-bin/*" -Destination "..\game" -Recurse -Force
           mkdir ../game/addons
-          cp addons/tooting ../game/addons/
-          cp addons/therac_sim ../game/addons/
-          cp addons/gd_cubism ../game/addons/
+          Copy-Item -Path "addons/tooting" -Destination "D:\a\test_project\game\addons" -Recurse -Force
+          Copy-Item -Path "addons/therac_sim" -Destination "D:\a\test_project\game\addons" -Recurse -Force
+          Copy-Item -Path "addons/gd_cubism" -Destination "D:\a\test_project\game\addons" -Recurse -Force
+          tree D:/a/test_project/game /F
       - name: Finish appimage
         if: matrix.os == 'ubuntu-latest'
         run: |
-          cp -f addons/tooting/usr/lib/* ../game/usr/lib/
-          cp -f addons/therac_sim/usr/lib/* ../game/usr/lib/
+          cp -rf addons/tooting/usr/lib/* ../game/usr/lib/
+          cp -rf addons/therac_sim/usr/lib/* ../game/usr/lib/
           mv ../game/game_data.pck ../game/usr/bin/
           cp -rf godot-bin/* ../game/usr/bin/
           cp TheracGame.desktop ../game/
           cp myapp.png ../game/
-          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ../game/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
+          ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ../game/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux artefact
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: game-linux-appimage
-          path: game.AppImage
+          path: TheracGame-x86_64.AppImage
       - name: Upload windows artefact
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
@@ -283,19 +283,14 @@ jobs:
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
-        uses: actions/upload-artifact@v4
+        # this needs to be v3 because the newer action trips over its own dick with nofile and it's hard to fix this on windows
+        uses: actions/upload-artifact@v3
         with:
           name: game-windows-unpacked
           path: ${{ github.workspace }}
       - name: Remove appimage before packing raw data
         if: matrix.os == 'ubuntu-latest'
-        run: rm -f game.AppImage
-#      - name: Upload linux unpacked
-#        if: matrix.os == 'ubuntu-latest'
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: game-linux-unpacked
-#          path: ${{ github.workspace }}
+        run: rm -f TheracGame-x86_64.AppImage
       - name: make appimage with unpacked data
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -311,10 +306,10 @@ jobs:
           mv myapp.png ../other/
           mv ./* ../other/usr/bin/
           ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other
-          LINUXDEPLOY_OUTPUT_APP_NAME=game-unpacked ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
+          ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux unpacked appimage
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: game-linux-unpacked
-          path: game-unpacked.AppImage
+          path: TheracGame-x86_64.AppImage
