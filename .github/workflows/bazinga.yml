@@ -244,8 +244,8 @@ jobs:
       - name: Finish appimage
         if: matrix.os == 'ubuntu-latest'
         run: |
-          mv ext/tooting/usr/lib/* ../game/usr/lib/
-          mv ext/therac_sim/usr/lib/* ../game/usr/lib/
+          mv addons/tooting/usr/lib/* ../game/usr/lib/
+          mv addons/therac_sim/usr/lib/* ../game/usr/lib/
           mv ../game/game_data.pck ../game/usr/bin/
           mv godot-bin/* ../game/usr/bin/
           LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ./godot-bin/godot.linuxbsd.editor.x86_64.mono --output appimage
@@ -260,4 +260,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: game-windows
-          path: ../game
+          path: ${{ github.workspace }}/../game
