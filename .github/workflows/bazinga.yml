@@ -43,9 +43,8 @@ jobs:
           lfs: true
       - name: Clean up dev environment 1/?
         run: |
-
           unlink addons/gd_cubism
-#          unlink addons/therac_sim
+          #          unlink addons/therac_sim
           unlink addons/tooting
       - name: Clean up dev environment 2/? Linux
         if: ${{matrix.os == 'ubuntu-latest' }}
@@ -300,7 +299,7 @@ jobs:
           mv ./linuxdeploy-static-x86_64.AppImage ../
           mkdir -p ./usr/lib
           mv addons/tooting/usr/lib/* ./usr/lib/
-#          mv addons/therac_sim/usr/lib/* ./usr/lib/
+          #          mv addons/therac_sim/usr/lib/* ./usr/lib/
           mv godot-bin/* ./usr/bin/
           mv usr ../other/
           mv TheracGame.desktop ../other/
