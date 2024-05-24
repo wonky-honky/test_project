@@ -249,20 +249,34 @@ jobs:
       - name: Finish appimage
         if: matrix.os == 'ubuntu-latest'
         run: |
-          mv addons/tooting/usr/lib/* ../game/usr/lib/
-          mv addons/therac_sim/usr/lib/* ../game/usr/lib/
+          cp -f addons/tooting/usr/lib/* ../game/usr/lib/
+          cp -f addons/therac_sim/usr/lib/* ../game/usr/lib/
           mv ../game/game_data.pck ../game/usr/bin/
-          mv godot-bin/* ../game/usr/bin/
-          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ./godot-bin/godot.linuxbsd.editor.x86_64.mono --output appimage
+          cp -f godot-bin/* ../game/usr/bin/
+          LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux artefact
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: game-linux-appimage
           path: game.AppImage
       - name: Upload windows artefact
         if: matrix.os == 'windows-latest'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: game-windows
           path: D:/a/test_project/game
+      - name: Upload windows unpacked
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-windows-unpacked
+          path: ${{ github.workspace }}
+      - name: Remove appimage before packing raw data
+        run: rm -f game.AppImage
+      - name: Upload linux unpacked
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-linux-unpacked
+          path: game.AppImage
