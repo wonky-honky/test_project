@@ -257,6 +257,7 @@ jobs:
           cp -f addons/therac_sim/usr/lib/* ../game/usr/lib/
           mv ../game/game_data.pck ../game/usr/bin/
           cp -rf godot-bin/* ../game/usr/bin/
+          cp TheracGame.desktop ../game/
           LINUXDEPLOY_OUTPUT_APP_NAME=game ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ../game/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
       - name: Upload linux artefact
         if: matrix.os == 'ubuntu-latest'
@@ -270,11 +271,12 @@ jobs:
         with:
           name: game-windows
           path: D:/a/test_project/game/**
-      - name: Clean up symlinks on windows before uploading unpacked
+      - name: Clean up symlinks on windows before uploading unpacked, and delete .godot
         if: matrix.os == 'windows-latest'
         run: |
           unlink addons/zylann.hterrain
           cp ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
+          Remove-Item -Recurse -Force .godot
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
@@ -302,6 +304,7 @@ jobs:
           mv addons/therac_sim/usr/lib/* ./usr/lib/
           mv godot-bin/* ./usr/bin/
           mv usr ../other/
+          mv TheracGame.desktop ../other/
           mv ./* ../other/usr/bin/
           ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other
           LINUXDEPLOY_OUTPUT_APP_NAME=game-unpacked ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
