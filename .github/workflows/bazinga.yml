@@ -283,6 +283,16 @@ jobs:
           unlink addons/zylann.hterrain
           Copy-Item -Path "ext/godot_heightmap_plugin/addons/zylann.hterrain" -Destination "addons/" -Recurse -Force
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
+          Move-Item -Path "godot-bin/**" -Destination ./
+          Remove-Item -Recurse -Force ext
+      - name: Clean up on linux before uploading unpacked
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          unlink addons/zylann.hterrain
+          cp -r ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
+          rm -rf ext/godot_heightmap_plugin
+          rm -rf godot-bin
+          rm -rf ext
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
         # this needs to be v3 because the newer action trips over its own dick with nofile and it's hard to fix this on windows
@@ -313,6 +323,12 @@ jobs:
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other --deploy-deps-only=../other/usr/bin/addons/tooting/tooting/lib/Linux-x86_64/libtooting.so
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other --deploy-deps-only=../other/usr/bin/addons/therac_sim/therac_sim/lib/Linux-x86_64/libtherac_sim.so
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.llvm --output appimage
+          pushd ../other/usr/bin/addons/tooting
+          rm -rf include lib share usr
+          popd
+          pushd ../other/usr/bin/addons/therac_sim
+          rm -rf usr
+          popd
       - name: Upload linux unpacked appimage
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
