@@ -70,14 +70,6 @@ jobs:
         with:
           name: therac_sim-Release-${{ runner.os }}
           path: addons/therac_sim
-#      - uses: actions/download-artifact@v4
-#        with:
-#          name: tooting-Debug-${{ runner.os }}
-#          path: addons/tooting
-#      - uses: actions/download-artifact@v4
-#        with:
-#          name: therac_sim-Debug-${{ runner.os }}
-#          path: addons/therac_sim
       - uses: actions/download-artifact@v4
         with:
           name: gd_cubism-${{ runner.os }}
@@ -223,20 +215,6 @@ jobs:
           # Optional, ignore forks when searching for artifacts
           # default true
           allow_forks: false
-#      - name: Pack game data Linux
-#        if: ${{ matrix.os == 'ubuntu-latest' }}
-#        run: |
-#          chmod a+x ./godot-bin -R
-#          ./godot-bin/godot.linuxbsd.editor.x86_64.mono --headless --verbose --export-pack Linux game_data.pck
-#          ls -lFh
-#      - name: Pack game data Windows
-#        if: ${{ matrix.os == 'windows-latest' }}
-#        run: |
-#          ./godot-bin/godot.windows.editor.x86_64.exe --verbose --headless --export-pack Windows game_data.pck
-#      - name: Start preparing final directory
-#        run: |
-#          mkdir ../game
-#          mv game_data.pck ../game/
       - name: Prepare appimage 
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -245,38 +223,6 @@ jobs:
           chmod a+x godot-bin -R
           chmod a+x ./linuxdeploy-static-x86_64.AppImage
           chmod a+x ./AppRun
-#          ./linuxdeploy-static-x86_64.AppImage --appdir ../game
-#      - name: Deploy executable windows
-#        if: ${{ matrix.os == 'windows-latest' }}
-#        run: |
-#          Copy-Item -Path "godot-bin/*" -Destination "..\game" -Recurse -Force
-#          mkdir ../game/addons
-#          Copy-Item -Path "addons/tooting" -Destination "D:\a\test_project\game\addons" -Recurse -Force
-#          Copy-Item -Path "addons/therac_sim" -Destination "D:\a\test_project\game\addons" -Recurse -Force
-#          Copy-Item -Path "addons/gd_cubism" -Destination "D:\a\test_project\game\addons" -Recurse -Force
-#          tree D:/a/test_project/game /F
-#      - name: Finish appimage
-#        if: matrix.os == 'ubuntu-latest'
-#        run: |
-#          cp -rf addons/tooting/usr/lib/* ../game/usr/lib/
-#          cp -rf addons/therac_sim/usr/lib/* ../game/usr/lib/
-#          mv ../game/game_data.pck ../game/usr/bin/
-#          cp -rf godot-bin/* ../game/usr/bin/
-#          cp TheracGame.desktop ../game/
-#          cp myapp.png ../game/
-#          ./linuxdeploy-static-x86_64.AppImage --appdir ../game -e ../game/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
-#      - name: Upload linux artefact
-#        if: matrix.os == 'ubuntu-latest'
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: game-linux-appimage
-#          path: TheracGame-x86_64.AppImage
-#      - name: Upload windows artefact
-#        if: matrix.os == 'windows-latest'
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: game-windows
-#          path: D:/a/test_project/game/**
       - name: Clean up on windows before uploading unpacked
         if: matrix.os == 'windows-latest'
         run: |
@@ -291,6 +237,7 @@ jobs:
           unlink addons/zylann.hterrain
           cp -r ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
           rm -rf ext/godot_heightmap_plugin
+          mv godot-bin/* ./
           rm -rf godot-bin
           rm -rf ext
       - name: Upload windows unpacked
@@ -300,9 +247,6 @@ jobs:
         with:
           name: game-windows-unpacked
           path: ${{ github.workspace }}
-#      - name: Remove appimage before packing raw data
-#        if: matrix.os == 'ubuntu-latest'
-#        run: rm -f TheracGame-x86_64.AppImage
       - name: make appimage with unpacked data
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -310,10 +254,6 @@ jobs:
           mkdir -p ./usr/bin
           mv ./linuxdeploy-static-x86_64.AppImage ../
           mkdir -p ./usr/lib
-          #          mv addons/tooting/usr/lib/* ./usr/lib/
-          #          mv addons/therac_sim/usr/lib/* ./usr/lib/
-          mv godot-bin/* ./usr/bin/
-          mv run_project_in_appimage.sh ./usr/bin/
           mv usr ../other/
           mv TheracGame.desktop ../other/
           mv myapp.png ../other/
