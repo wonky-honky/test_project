@@ -50,6 +50,7 @@ jobs:
         if: ${{matrix.os == 'ubuntu-latest' }}
         run: |
           rm -rf .git
+          rm -rf .github
           rm -rf ext/gd_cubism
           rm -rf ext/tooting
           rm -rf ext/therac_sim
@@ -281,7 +282,7 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: |
           unlink addons/zylann.hterrain
-          cp ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
+          Copy-Item -Path "ext/godot_heightmap_plugin/addons/zylann.hterrain" -Destination "addons/" -Recurse -Force
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
       - name: Upload windows unpacked
         if: matrix.os == 'windows-latest'
@@ -303,6 +304,7 @@ jobs:
           mv addons/tooting/usr/lib/* ./usr/lib/
           #          mv addons/therac_sim/usr/lib/* ./usr/lib/
           mv godot-bin/* ./usr/bin/
+          mv run_project_in_appimage.sh ./usr/bin/
           mv usr ../other/
           mv TheracGame.desktop ../other/
           mv myapp.png ../other/
