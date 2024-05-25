@@ -58,6 +58,7 @@ jobs:
         if: ${{matrix.os == 'windows-latest' }}
         run: |
           Remove-Item -Recurse -Force .git
+          Remove-Item -Recurse -Force .github
           Remove-Item -Recurse -Force ext/gd_cubism
           Remove-Item -Recurse -Force ext/tooting
           Remove-Item -Recurse -Force ext/therac_sim
