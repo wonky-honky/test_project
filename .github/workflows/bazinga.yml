@@ -300,7 +300,9 @@ jobs:
           mv ./linuxdeploy-static-x86_64.AppImage ../
           mkdir -p ./usr/lib
           mv addons/tooting/usr/lib/* ./usr/lib/
+          mv addons/tooting/tooting/lib/Linux-x86_64/libfurnace.so ./usr/lib/
           mv addons/therac_sim/usr/lib/* ./usr/lib/
+          mv addons/therac_sim/therac_sim/lib/Linux-x86_64/libHShstherac25-0.1.0.0-inplace-ghc9.8.2.so ./usr/lib/
           mv godot-bin/* ./usr/bin/
           mv run_project_in_appimage.sh ./usr/bin/
           mv usr ../other/
