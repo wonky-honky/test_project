@@ -309,7 +309,7 @@ jobs:
           mv AppRun ../other/
           mv ./* ../other/usr/bin/
           ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other
-          ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.mono --output appimage
+          ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.llvm --output appimage
       - name: Upload linux unpacked appimage
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
