@@ -300,8 +300,8 @@ jobs:
           mkdir -p ./usr/bin
           mv ./linuxdeploy-static-x86_64.AppImage ../
           mkdir -p ./usr/lib
-          mv addons/tooting/usr/lib/* ./usr/lib/
-          mv addons/therac_sim/usr/lib/* ./usr/lib/
+          #          mv addons/tooting/usr/lib/* ./usr/lib/
+          #          mv addons/therac_sim/usr/lib/* ./usr/lib/
           mv godot-bin/* ./usr/bin/
           mv run_project_in_appimage.sh ./usr/bin/
           mv usr ../other/
@@ -310,6 +310,8 @@ jobs:
           mv AppRun ../other/
           mv ./* ../other/usr/bin/
           ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other
+          ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other --deploy-deps-only=../other/usr/bin/addons/tooting/tooting/lib/Linux-x86_64/libtooting.so
+          ../linuxdeploy-static-x86_64.AppImage --appdir ${{ github.workspace }}/other --deploy-deps-only=../other/usr/bin/addons/therac_sim/therac_sim/lib/Linux-x86_64/libtherac_sim.so
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.llvm --output appimage
       - name: Upload linux unpacked appimage
         if: matrix.os == 'ubuntu-latest'
