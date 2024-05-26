@@ -37,19 +37,24 @@ _subresources={
 "generate/physics": true
 },
 "PATH:Plane": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 0
 },
 "PATH:Plane_001": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 0
 },
 "PATH:Plane_002": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 0
 },
 "PATH:Plane_003": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 0
 },
 "PATH:Plane_004": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 0
 },
 "PATH:door_typeA": {
 "generate/physics": true,

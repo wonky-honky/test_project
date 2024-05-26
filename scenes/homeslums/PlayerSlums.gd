@@ -74,9 +74,11 @@ func _unhandled_input(event):
 		Chorus.game_over("You take a moment to reflect on yourself, on the state of the world and on your position and role in it. Something smells like it's burning. You think you have just gained one thousand points. An euphoric feeling envelops you. Your vision fades.");
 
 func _physics_process(delta: float) -> void:
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		print_debug("falling at " + str(velocity.y));
 		if velocity.y < - 100.0 :
 			Fade.fade_out(1,Color.RED);
 			Fade.fade_in(1,Color.RED);
