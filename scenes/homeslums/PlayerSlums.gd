@@ -78,12 +78,11 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		print_debug("falling at " + str(velocity.y));
-		if velocity.y < - 100.0 :
-			Fade.fade_out(1,Color.RED);
-			Fade.fade_in(1,Color.RED);
-			Chorus.game_over("You have fallen to your death.");
-		
+	elif velocity.y < - 100.0 :
+		Fade.fade_out(1,Color.RED);
+		Fade.fade_in(1,Color.RED);
+		Chorus.game_over("You have fallen to your death.");
+
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

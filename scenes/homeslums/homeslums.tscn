@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://btin64ilyqmd0"]
+[gd_scene load_steps=112 format=4 uid="uid://btin64ilyqmd0"]
 
 [ext_resource type="Script" path="res://scenes/homeslums/homeslums.gd" id="1_3f5pa"]
 [ext_resource type="PackedScene" uid="uid://eldkrrqp8hrt" path="res://3d/scene/Bedroom.glb" id="1_axgbk"]
@@ -32,6 +32,12 @@
 [ext_resource type="Script" path="res://scenes/homeslums/trinkets/HandPetting.gd" id="28_y4peo"]
 [ext_resource type="PackedScene" uid="uid://csltyp5tmoa3k" path="res://3d/scene/Simple_NakedFatMan/Pain_FatMan_Naked.fbx" id="29_xjird"]
 [ext_resource type="Texture2D" uid="uid://c3g6ucp1y6fvc" path="res://3d/scene/bus_stop/textures/Lamppost_baseColor.png" id="30_nkmla"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmdju"]
+size = Vector3(94.1072, 160.381, 3.93042)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3aqsx"]
+size = Vector3(4.90796, 5.14496, 2.94531)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj46"]
 resource_name = "Material.002"
@@ -789,6 +795,8 @@ volumetric_fog_density = 0.01
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_f36pg"]
 
+[sub_resource type="Compositor" id="Compositor_4d2eg"]
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5che4"]
 seed = 56
 fractal_type = 3
@@ -895,8 +903,32 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0573897, 16.1681, 12.523
 [node name="Light" parent="Bedroom" index="0"]
 visible = false
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_hvrmp")]
+[node name="Shitter" parent="." instance=ExtResource("2_hvrmp")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2, 0, 40.4061)
+
+[node name="Camera3D" type="Camera3D" parent="Shitter"]
+transform = Transform3D(9.99402, 1.86153e-08, 0.345681, -0.272541, 6.15139, 7.87948, -0.212642, -7.88419, 6.14771, 7.8562, -39.6697, 0)
+
+[node name="GroovyDarkness" type="DirectionalLight3D" parent="Shitter"]
+transform = Transform3D(10, 0, 0, 0, 1.07357, 9.94221, 0, -9.94221, 1.07357, 0, 24.1598, 0)
+visible = false
+light_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_negative = true
+
+[node name="ShitterDoorInside" type="StaticBody3D" parent="Shitter"]
+process_mode = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shitter/ShitterDoorInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.7812, -62.8638, 100.993)
+shape = SubResource("BoxShape3D_gmdju")
+
+[node name="ShitterLightSwitch" type="StaticBody3D" parent="Shitter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -55.2595, 102.087)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shitter/ShitterLightSwitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95398, 5.27115, -0.269897)
+shape = SubResource("BoxShape3D_3aqsx")
 
 [node name="Bedroom2" parent="." instance=ExtResource("1_axgbk")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -11.4485, 16.1681, 12.5239)
@@ -1376,6 +1408,7 @@ mesh = SubResource("ArrayMesh_deeee")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_in38m")
 camera_attributes = SubResource("CameraAttributesPractical_f36pg")
+compositor = SubResource("Compositor_4d2eg")
 
 [node name="TopDownApartmentsCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.119912, 0.992785, 0, -0.992785, 0.119912, 0, 89.4411, 41.0378)
@@ -1439,7 +1472,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 78.3662, -13.0476, 181.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 99.1217, -14.9286, -15.2776)
 
 [node name="Sketchfab_Scene8" parent="." instance=ExtResource("12_w2cwk")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.9273, -15.2115, 158.93)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.9273, -15.2115, 179.827)
 
 [node name="Sketchfab_Scene9" parent="." instance=ExtResource("12_w2cwk")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.7134, -14.9286, 4.9249)
@@ -1750,7 +1783,7 @@ mesh = SubResource("ArrayMesh_w31bk")
 skeleton = NodePath("")
 
 [editable path="Bedroom"]
-[editable path="Sketchfab_Scene"]
+[editable path="Shitter"]
 [editable path="Bedroom2"]
 [editable path="Bedroom3"]
 [editable path="Bedroom4"]

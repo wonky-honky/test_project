@@ -34,8 +34,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Sketchfab_model/93d7d744446c4d22b68ab4c3ea3399a1_3ds/Bathroom_1/3DSMeshMatrix3/Object_10": {
-"generate/physics": true,
-"physics/shape_type": 0
+"generate/physics": true
 },
 "PATH:Sketchfab_model/93d7d744446c4d22b68ab4c3ea3399a1_3ds/Dryer/3DSMeshMatrix2/Object_7": {
 "generate/physics": true
