@@ -262,7 +262,7 @@ jobs:
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other --deploy-deps-only=../other/usr/bin/addons/tooting/tooting/lib/Linux-x86_64/libtooting.so
           ../linuxdeploy-static-x86_64.AppImage --appdir ../other --deploy-deps-only=../other/usr/bin/addons/therac_sim/therac_sim/lib/Linux-x86_64/libtherac_sim.so
-          ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.x86_64.llvm --output appimage
+          ../linuxdeploy-static-x86_64.AppImage --appdir ../other -e ../other/usr/bin/godot.linuxbsd.editor.double.x86_64.llvm --output appimage
           pushd ../other/usr/bin/addons/tooting
           rm -rf include lib share usr
           popd
