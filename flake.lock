@@ -27,11 +27,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1716206189,
-        "narHash": "sha256-q9xRGBuP6euUv+TihDhvoTyTebEvrsm1Hid9lsPmdS8=",
+        "lastModified": 1716828980,
+        "narHash": "sha256-0txgJOw+210QDsa7vpR+Q6DJvJCE/nuIvQc+CRqSgcM=",
         "owner": "wonky-honky",
         "repo": "godot-slimflake",
-        "rev": "5177d47dce7a7e495b3922d1f90e10a42a92a884",
+        "rev": "466bd4e164b8cfeae5a04ff02d6cad34206c4b3d",
         "type": "github"
       },
       "original": {
@@ -59,11 +59,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1715014515,
-        "narHash": "sha256-9xzgW0gz9Qk99q6kwJ3H/ktltMeSkE3mCKuXvu7/ONY=",
+        "lastModified": 1716819864,
+        "narHash": "sha256-mpmHHIruvDZIM0uUcr1ZEe3Eem4nnOLvaxjyhjJlKVI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fea02c5bb5aeeb59c1c04956ab8692f83715d7aa",
+        "rev": "b98544a6c41552f4e9557a22f1673182b1f51f0d",
         "type": "github"
       },
       "original": {
@@ -75,11 +75,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1715014515,
-        "narHash": "sha256-9xzgW0gz9Qk99q6kwJ3H/ktltMeSkE3mCKuXvu7/ONY=",
+        "lastModified": 1716819864,
+        "narHash": "sha256-mpmHHIruvDZIM0uUcr1ZEe3Eem4nnOLvaxjyhjJlKVI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fea02c5bb5aeeb59c1c04956ab8692f83715d7aa",
+        "rev": "b98544a6c41552f4e9557a22f1673182b1f51f0d",
         "type": "github"
       },
       "original": {
