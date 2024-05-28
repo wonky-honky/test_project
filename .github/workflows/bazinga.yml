@@ -9,7 +9,8 @@ on:
       - 'live2d/**'
       - '3d/**'
       - 'scenes/**'
-    
+  worfklow_dispatch:
+
 jobs:
   therac_sim:
     uses: wonky-honky/therac_sim/.github/workflows/main.yml@main
