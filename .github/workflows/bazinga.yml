@@ -9,7 +9,7 @@ on:
       - 'live2d/**'
       - '3d/**'
       - 'scenes/**'
-  worfklow_dispatch:
+  workflow_dispatch:
 
 jobs:
   therac_sim:
