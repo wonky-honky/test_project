@@ -13,3 +13,6 @@
 [submodule "ext/godot_heightmap_plugin"]
 	path = ext/godot_heightmap_plugin
 	url = https://github.com/Zylann/godot_heightmap_plugin
+[submodule "ext/dialogic"]
+	path = ext/dialogic
+	url = https://github.com/dialogic-godot/dialogic

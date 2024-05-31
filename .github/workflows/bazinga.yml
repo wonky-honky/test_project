@@ -230,6 +230,9 @@ jobs:
           unlink addons/zylann.hterrain
           Copy-Item -Path "ext/godot_heightmap_plugin/addons/zylann.hterrain" -Destination "addons/" -Recurse -Force
           Remove-Item -Recurse -Force ext/godot_heightmap_plugin
+          unlink addons/dialogic
+          Copy-Item -Path "ext/dialogic/addons/dialogic" -Destination "addons/" -Recurse -Force
+          Remove-Item -Recurse -Force ext/dialogic
           Move-Item -Path "godot-bin/**" -Destination ./
           Remove-Item -Recurse -Force ext
       - name: Clean up on linux before uploading unpacked
@@ -238,6 +241,9 @@ jobs:
           unlink addons/zylann.hterrain
           cp -r ext/godot_heightmap_plugin/addons/zylann.hterrain addons/
           rm -rf ext/godot_heightmap_plugin
+          unlink addons/dialogic
+          cp -r ext/dialogic/addons/dialogic addons/
+          rm -rf ext/dialogic
           mv godot-bin/* ./
           rm -rf godot-bin
           rm -rf ext
