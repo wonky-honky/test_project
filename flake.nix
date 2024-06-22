@@ -102,7 +102,7 @@
               fmt_8
               libxml2
               godot
-              gdtoolkit
+              gdtoolkit_4
               #              (pkgs.llvmPackages_18.libcxx.override { enableShared = false; })
               pkgs.llvmPackages_18.compiler-rt
               cmake
