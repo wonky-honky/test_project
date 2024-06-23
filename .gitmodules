@@ -15,4 +15,4 @@
 	url = https://github.com/Zylann/godot_heightmap_plugin
 [submodule "ext/dialogic"]
 	path = ext/dialogic
-	url = https://github.com/dialogic-godot/dialogic
+	url = https://github.com/pillowtrucker/dialogic
